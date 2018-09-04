@@ -19,4 +19,4 @@ package中的init函数都是可选的，但package main就必须包含一个mai
 载完毕了，就会开始对main包中的包级常量和变量进行初始化，然后执行main包中的
 init函数（如果存在的话），最后执行main函数
 
-![调用顺序](./../images/golang/调用顺序.jpg)
+![调用顺序](./../images/golang/init-main.jpg)
