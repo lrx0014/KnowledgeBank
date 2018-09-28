@@ -7,6 +7,7 @@
   * [代理模式](java/proxy.md)
 * [GO](golang/README.md)
   * [调用顺序](golang/init-main.md)
+  * [交叉编译](golang/cross-compile.md)
 * [Git](git/README.md)
   * [合并与变基](git/merge-rebase.md)
 * [Network](network/README.md)
