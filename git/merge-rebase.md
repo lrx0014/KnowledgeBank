@@ -1,4 +1,4 @@
-## 合并与变基
+# 合并与变基
 This page updated at: **2018/09/05**
 
 转载自：烟雨随风 @ https://www.jianshu.com/p/cca69cb695a6

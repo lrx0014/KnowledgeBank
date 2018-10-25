@@ -10,6 +10,7 @@
   * [交叉编译](golang/cross-compile.md)
   * [Go测试框架](golang/golang-test.md)
   * [Docker.Sock](golang/docker-sock.md)
+  * [k8s-RBAC访问控制](golang/k8s-rbac.md)
 * [Git](git/README.md)
   * [合并与变基](git/merge-rebase.md)
 * [Network](network/README.md)

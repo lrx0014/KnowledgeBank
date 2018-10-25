@@ -1,8 +1,8 @@
-## Golang的测试框架
+# Golang的测试框架
 
 This page updated at: **2018/10/22**
 
-### 前言
+## 前言
 
 每种语言都有自己的测试姿势，golang的作者提供了一个testing的包来供大家完成测试之旅，简单好用，一起走一波。
 
@@ -15,7 +15,7 @@ This page updated at: **2018/10/22**
 * 5.测试代码的覆盖率测试 
 * 6.测试所有的参数备忘
 
-### 1.为什么需要测试？
+## 1.为什么需要测试？
 
 这个是一个老生常谈的话题了，忘记哪里看的数据了，表明是完善的测试体系（这里主要指自测），其实是会提高开发效率的。
 
@@ -23,7 +23,7 @@ This page updated at: **2018/10/22**
 
 所以Golang官方提供了testing包来满足大家的需求。
 
-### 2.Golang的测试规矩
+## 2.Golang的测试规矩
 
 通过testing包我们主要是可以进行三个测试的姿势：1.功能测试 2.压力测试 3.测试代码覆盖率的测试(你写的测试用例覆盖了多少代码)。
 
@@ -43,7 +43,7 @@ This page updated at: **2018/10/22**
 压力测试命令 | go test -test.bench file_test.go
 压力测试的循环体 | 使用test.B.N
 
-### 3.功能测试
+## 3.功能测试
 
 我创建了一个文件夹gotest，里头存在两个文件：1.正式文件cbstest.go 2.测试文件cbstest_test.go
 
@@ -96,7 +96,7 @@ func BenchmarkGetArea(t *testing.B) {
 
 ![go test](./../images/golang/go-test-bench.png)
 
-### 5.测试代码的覆盖率测试
+## 5.测试代码的覆盖率测试
 
 执行命令：go test -cover
 
@@ -104,7 +104,7 @@ func BenchmarkGetArea(t *testing.B) {
 
 > 需要特别说明的是，测试的覆盖度正常情况下是跑不满100%，比如说写的代码是来接住panic的等等异常的，那其实就不会走到了。
 
-### 6.测试所有的参数备忘
+## 6.测试所有的参数备忘
 
 The test binary also accepts flags that control execution of the test; these 
 flags are also accessible by ‘go test’.

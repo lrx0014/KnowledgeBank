@@ -1,4 +1,4 @@
-## 关于/var/run/docker.sock
+# 关于/var/run/docker.sock
 
 This page updated at: **2018/10/08**
 
@@ -8,7 +8,7 @@ This page updated at: **2018/10/08**
 
 ![docker.sock](./../images/golang/docker-sock.png)
 
-### Docker守护进程的API
+## Docker守护进程的API
 
 安装Docker之后，Docker守护进程会监听Unix域套接字：/var/run/docker.sock。这一点可以通过Docker daemon的配置选项看出来(在ubuntu上执行cat /etc/default/docker )：
 
@@ -20,11 +20,11 @@ This page updated at: **2018/10/08**
 
 Docker engine API v1.27 (最新版)定义的所有HTTP接口都可以通过/var/run/docker.sock调用。
 
-### 运行容器
+## 运行容器
 
 HTTP请求是通过docker.sock发送给Docker守护进程的。可以通过curl创建容器来说明这一点。使用HTTP接口运行容器需要两个步骤，先创建容器，然后启动容器。
 
-#### 1. 创建nginx容器
+### 1. 创建nginx容器
 
 curl命令通过Unix套接字发送{“Image”:”nginx”}到Docker守护进程的/containers/create接口，这个将会基于Nginx镜像创建容器并返回容器的ID。
 
@@ -38,7 +38,7 @@ curl -XPOST --unix-socket /var/run/docker.sock -d ‘{“Image”:”nginx”}�
 {“Id”:”fcb65c6147efb862d5ea3a2ef20e793c52f0fafa3eb04e4292cb4784c5777d65",”Warnings”:null}
 ```
 
-#### 2. 启动nginx容器
+### 2. 启动nginx容器
 
 使用返回的容器ID，调用/containers//start接口，即可启动新创建的容器。
 
@@ -54,11 +54,11 @@ CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
 fcb65c6147ef nginx “nginx -g ‘daemon …” 5 minutes ago Up 5 seconds 80/tcp, 443/tcp ecstatic_kirch
 ```
 
-### Docker守护进程的事件流
+## Docker守护进程的事件流
 
 Docker的API提供了/events接口，可以用于获取Docker守护进程产生的所有事件流。负载均衡组件(load balancer)组件可以通过它获取容器的创建/删除事件，从而动态地更新配置。通过创建一个简单的容器，我们可以了解如何利用Docker守护进程的事件。
 
-#### 1. 运行alpine容器
+### 1. 运行alpine容器
 
 下面的命令用于运行容器，并采用交互模式(interactive mode，该模式下会直接进入容器内)，同时绑定docker.sock。
 
@@ -66,7 +66,7 @@ Docker的API提供了/events接口，可以用于获取Docker守护进程产生�
 docker run -v /var/run/docker.sock:/var/run/docker.sock -ti alpine sh
 ```
 
-#### 2. 监听Docker守护进程的事件流
+### 2. 监听Docker守护进程的事件流
 
 在alpine容器内，可以通过Docker套接字发送HTTP请求到/events接口。这个命令会一直等待Docker daemon的事件。当新的事件发生时(例如创建了新的容器)，会看到输出信息。
 
@@ -74,7 +74,7 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock -ti alpine sh
 curl --unix-socket /var/run/docker.sock http://localhost/events
 ```
 
-#### 3. 观察事件
+### 3. 观察事件
 
 基于Nginx镜像运行容器之后，通过aplpine容器的标准输出可以观察到Docker daemon生成的事件。
 
@@ -88,7 +88,7 @@ docker run -p 8080:80 -d nginx
 * 连接默认的桥接网络(bridge network)
 * 启动容器
 
-### 结论
+## 结论
 
 希望这些简单的解释可以帮助大家理解/var/run/docker.sock文件，并且明白它绑定到容器时有何作用。显然，真正的应用会使用代码而不是curl命令给Docker守护进程发送HTTP请求。
 

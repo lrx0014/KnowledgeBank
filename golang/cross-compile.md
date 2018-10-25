@@ -1,4 +1,4 @@
-## Golang 在 Mac、Linux、Windows 下如何交叉编译
+# Golang 在 Mac、Linux、Windows 下如何交叉编译
 
 This page updated at: **2018/09/28**
 
