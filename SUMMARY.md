@@ -6,6 +6,7 @@
 * [JAVA](java/README.md)
   * [代理模式](java/proxy.md)
 * [GO](golang/README.md)
+  * [深入解析GO](golang/go-internals.md)
   * [调用顺序](golang/init-main.md)
   * [交叉编译](golang/cross-compile.md)
   * [Go测试框架](golang/golang-test.md)
