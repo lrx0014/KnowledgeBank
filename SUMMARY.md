@@ -13,6 +13,7 @@
   * [Docker.Sock](golang/docker-sock.md)
   * [k8s-RBAC访问控制](golang/k8s-rbac.md)
   * [使用GDB调试](golang/debug-with-gdb.md)
+  * [GO模板处理](golang/go-template.md)
 * [Git](git/README.md)
   * [合并与变基](git/merge-rebase.md)
 * [Network](network/README.md)
