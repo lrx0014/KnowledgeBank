@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Linux](linux/README.md)
   * [Linux-Inside](linux/linux-inside.md)
+  * [使用VIM](linux/vim.md)
 * [JAVA](java/README.md)
   * [代理模式](java/proxy.md)
 * [GO](golang/README.md)
