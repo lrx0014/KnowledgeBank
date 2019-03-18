@@ -9,6 +9,7 @@
 * [GO](golang/README.md)
   * [深入解析GO](golang/go-internals.md)
   * [协程的正确用法](golang/goroutine.md)
+  * [协程池](golang/goroutine-pool.md)
   * [调用顺序](golang/init-main.md)
   * [交叉编译](golang/cross-compile.md)
   * [Go测试框架](golang/golang-test.md)
