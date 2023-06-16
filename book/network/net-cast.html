@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>单播、组播、广播、任播 - KnowledgeBank</title>
+
+
+        <!-- Custom HTML head -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6994154364754088"
+             crossorigin="anonymous"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../linux/index.html"><strong aria-hidden="true">2.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/linux-inside.html"><strong aria-hidden="true">2.1.</strong> Linux-Inside</a></li><li class="chapter-item expanded "><a href="../linux/vim.html"><strong aria-hidden="true">2.2.</strong> 使用VIM</a></li></ol></li><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">3.</strong> JAVA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/proxy.html"><strong aria-hidden="true">3.1.</strong> 代理模式</a></li></ol></li><li class="chapter-item expanded "><a href="../golang/index.html"><strong aria-hidden="true">4.</strong> GO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../golang/go-internals.html"><strong aria-hidden="true">4.1.</strong> 深入解析GO</a></li><li class="chapter-item expanded "><a href="../golang/goroutine.html"><strong aria-hidden="true">4.2.</strong> 协程的正确用法</a></li><li class="chapter-item expanded "><a href="../golang/goroutine-pool.html"><strong aria-hidden="true">4.3.</strong> 协程池</a></li><li class="chapter-item expanded "><a href="../golang/init-main.html"><strong aria-hidden="true">4.4.</strong> 调用顺序</a></li><li class="chapter-item expanded "><a href="../golang/cross-compile.html"><strong aria-hidden="true">4.5.</strong> 交叉编译</a></li><li class="chapter-item expanded "><a href="../golang/golang-test.html"><strong aria-hidden="true">4.6.</strong> Go测试框架</a></li><li class="chapter-item expanded "><a href="../golang/docker-sock.html"><strong aria-hidden="true">4.7.</strong> Docker.Sock</a></li><li class="chapter-item expanded "><a href="../golang/k8s-rbac.html"><strong aria-hidden="true">4.8.</strong> k8s-RBAC访问控制</a></li><li class="chapter-item expanded "><a href="../golang/debug-with-gdb.html"><strong aria-hidden="true">4.9.</strong> 使用GDB调试</a></li><li class="chapter-item expanded "><a href="../golang/golang-template.html"><strong aria-hidden="true">4.10.</strong> GO模板处理</a></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">5.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/merge-rebase.html"><strong aria-hidden="true">5.1.</strong> 合并与变基</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">6.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../network/basic.html"><strong aria-hidden="true">6.1.</strong> 计算机网络知识点总结</a></li><li class="chapter-item expanded "><a href="../network/net-cast.html" class="active"><strong aria-hidden="true">6.2.</strong> 单播、组播、广播、任播</a></li></ol></li><li class="chapter-item expanded "><a href="../SomethingFunny/index.html"><strong aria-hidden="true">7.</strong> SomethingFunny</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SomethingFunny/1970-1-1.html"><strong aria-hidden="true">7.1.</strong> 时间的起点</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KnowledgeBank</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="单播组播多播广播以及任播"><a class="header" href="#单播组播多播广播以及任播">单播，组播(多播)，广播以及任播</a></h1>
+<p>This page updated at: <strong>2018/09/07</strong></p>
+<p><strong>单播</strong>(unicast): 是指封包在计算机网络的传输中，目的地址为单一目标的一种传输方式。它是现今网络应用最为广泛，通常所使用的网络协议或服务大多采用单播传输，例如一切基于TCP的协议。</p>
+<p><strong>组播</strong>(multicast): 也叫多播， 多点广播或群播。 指把信息同时传递给一组目的地址。它使用策略是最高效的，因为消息在每条网络链路上只需传递一次，而且只有在链路分叉的时候，消息才会被复制。</p>
+<p><strong>广播</strong>(broadcast):是指封包在计算机网络中传输时，目的地址为网络中所有设备的一种传输方式。实际上，这里所说的“所有设备”也是限定在一个范围之中，称为“广播域”。</p>
+<p><strong>任播</strong>(anycast):是一种网络寻址和路由的策略，使得资料可以根据路由拓朴来决定送到“最近”或“最好”的目的地。</p>
+<p>在Linux运行 <strong>ifconfig</strong>, 如果网卡信息中包含 <strong>UP BROADCAST RUNNING MULTICAST</strong>，则支持广播和组播。</p>
+<h2 id="单播"><a class="header" href="#单播">单播</a></h2>
+<p><img src="./../images/network/unicast.png" alt="单播" /></p>
+<p>每次只有两个实体相互通信，发送端和接收端都是唯一确定的。在IPv4网络中，0.0.0.0到223.255.255.255属于单播地址。</p>
+<p>你对小月月喊“小月月”，那么只有小月月回过头来答应你。</p>
+<h2 id="组播"><a class="header" href="#组播">组播</a></h2>
+<p><img src="./../images/network/multicast.png" alt="组播" /></p>
+<p>“组播”这个词通常用来指代IP组播。IP组播是一种通过使用一个组播地址将数据在同一时间以高效的方式发往处于TCP/IP网络上的多个接收者的协议。此外，它还常用来与RTP等音视频协议相结合。互联网架构师戴夫·克拉克是这样描述IP组播的：“你把数据包从一头放进去，网络就会试图将它们传递到想要得到它们的人那里。”</p>
+<p>组播报文的目的地址使用D类IP地址， D类地址不能出现在IP报文的源IP地址字段。</p>
+<p>你在大街上大喊一声“美女”， 会有一群女性回头看你。</p>
+<h2 id="广播"><a class="header" href="#广播">广播</a></h2>
+<p><img src="./../images/network/broadcast.png" alt="广播" /></p>
+<p>并非所有的计算机网络都支持广播，例如X.25网络和帧中继都不支持广播，而且也没有在“整个互联网范围中”的广播。IPv6亦不支持广播，广播相应的功能由任播(anycast)代替。
+通常，广播都是限制在局域网中的，比如以太网或令牌环网络。因为广播在局域网中造成的影响远比在广域网中小得多。</p>
+<p>以太网和IPv4网都用全1的地址表示广播，分别是ff:ff:ff:ff:ff:ff和255.255.255.255。令牌环网络使用IEEE 802.2控制域中的一个特殊值来表示广播。</p>
+<p>你在公司大喊一声“放假了”， 全部同事都会响应，大叫爽死了。</p>
+<h2 id="任播"><a class="header" href="#任播">任播</a></h2>
+<p><img src="./../images/network/anycast.png" alt="任播" /></p>
+<p>任播是与单播、广播和组播不同的方式。</p>
+<p>在单播中，在网络位址和网络节点之间存在一一对应的关系。
+在广播和组播中，在网络位址和网络节点之间存在一对多的关系：每一个目的位址对应一群接收可以复制资讯的节点。</p>
+<p>在任播中，在网络位址和网络节点之间存在一对多的关系：每一个位址对应一群接收节点，但在任何给定时间，只有其中之一可以接收到传送端来的资讯。
+在互联网中，通常使用边界网关协议来实现任播。</p>
+<p>作为老板，你在公司大喊一声“开发组的过来一个人”， 总会有一个人灰溜溜去响应， 挨批还是发钱啊？</p>
+<h2 id="组播地址"><a class="header" href="#组播地址">组播地址</a></h2>
+<p>组播组可以是永久的也可以是临时的。组播组地址中，有一部分由官方分配的，称为 <strong>永久组播组</strong>。永久组播组保持不变的是它的ip地址，组中的成员构成可以发生变化。永久组播组中成员的数量都可以是任意的，甚至可以为零。那些没有保留下来供永久组播组使用的ip组播地址，可以被临时组播组利用。</p>
+<ul>
+<li>
+<p>224.0.0.0～224.0.0.255为预留的组播地址（永久组地址），地址224.0.0.0保留不做分配，其它地址供路由协议使用；</p>
+</li>
+<li>
+<p>224.0.1.0～224.0.1.255是公用组播地址，Internetwork Control Block；</p>
+</li>
+<li>
+<p>224.0.2.0～238.255.255.255为用户可用的组播地址（临时组地址），全网范围内有效；</p>
+</li>
+<li>
+<p>239.0.0.0～239.255.255.255为本地管理组播地址，仅在特定的本地范围内有效。</p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p>永久的组播地址：</p>
+</blockquote>
+<ul>
+<li>224.0.0.0 基准地址（保留）</li>
+<li>224.0.0.1 所有主机的地址 （包括所有路由器地址）</li>
+<li>224.0.0.2 所有组播路由器的地址</li>
+<li>224.0.0.3 不分配</li>
+<li>224.0.0.4 dvmrp路由器</li>
+<li>224.0.0.5 所有ospf路由器</li>
+<li>224.0.0.6 ospf DR/BDR</li>
+<li>224.0.0.7 st路由器</li>
+<li>224.0.0.8 st主机</li>
+<li>224.0.0.9 rip-2路由器</li>
+<li>224.0.0.10 Eigrp路由器</li>
+<li>224.0.0.11 活动代理</li>
+<li>224.0.0.12 dhcp 服务器/中继代理</li>
+<li>224.0.0.13 所有pim路由器</li>
+<li>224.0.0.14 rsvp封装</li>
+<li>224.0.0.15 所有cbt路由器</li>
+<li>224.0.0.16 指定sbm</li>
+<li>224.0.0.17 所有sbms</li>
+<li>224.0.0.18 vrrp</li>
+</ul>
+<p>以太网传输单播ip报文的时候，目的mac地址使用的是接收者的mac地址。但是在传输组播报文时，传输目的不再是一个具体的接收者，而是一个成员不确定的组，所以使用的是组播mac地址。组播mac地址是和组播ip地址对应的。iana（internet assigned number authority）规定，组播mac地址的高24bit为0x01005e，mac 地址的低23bit为组播ip地址的低23bit。</p>
+<p>由于ip组播地址的后28位中只有23位被映射到mac地址，这样就会有32个ip组播地址映射到同一mac地址上。</p>
+<h2 id="广播地址"><a class="header" href="#广播地址">广播地址</a></h2>
+<p>广播地址(Broadcast Address)是专门用于同时向网络中所有工作站进行发送的一个地址。在使用TCP/IP 协议的网络中，主机标识段host ID 为全1 的IP 地址为广播地址，广播的分组传送给host ID段所涉及的所有计算机。例如，对于10.1.1.0 （255.255.255.0 ）网段，其广播地址为10.1.1.255 （255 即为2 进制的11111111 ），当发出一个目的地址为10.1.1.255 的分组（封包）时，它将被分发给该网段上的所有计算机。</p>
+<p>本地广播地址为255.255.255.255。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../network/basic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../SomethingFunny/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../network/basic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../SomethingFunny/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>k8s-RBAC访问控制 - KnowledgeBank</title>
+
+
+        <!-- Custom HTML head -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6994154364754088"
+             crossorigin="anonymous"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../linux/index.html"><strong aria-hidden="true">2.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/linux-inside.html"><strong aria-hidden="true">2.1.</strong> Linux-Inside</a></li><li class="chapter-item expanded "><a href="../linux/vim.html"><strong aria-hidden="true">2.2.</strong> 使用VIM</a></li></ol></li><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">3.</strong> JAVA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/proxy.html"><strong aria-hidden="true">3.1.</strong> 代理模式</a></li></ol></li><li class="chapter-item expanded "><a href="../golang/index.html"><strong aria-hidden="true">4.</strong> GO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../golang/go-internals.html"><strong aria-hidden="true">4.1.</strong> 深入解析GO</a></li><li class="chapter-item expanded "><a href="../golang/goroutine.html"><strong aria-hidden="true">4.2.</strong> 协程的正确用法</a></li><li class="chapter-item expanded "><a href="../golang/goroutine-pool.html"><strong aria-hidden="true">4.3.</strong> 协程池</a></li><li class="chapter-item expanded "><a href="../golang/init-main.html"><strong aria-hidden="true">4.4.</strong> 调用顺序</a></li><li class="chapter-item expanded "><a href="../golang/cross-compile.html"><strong aria-hidden="true">4.5.</strong> 交叉编译</a></li><li class="chapter-item expanded "><a href="../golang/golang-test.html"><strong aria-hidden="true">4.6.</strong> Go测试框架</a></li><li class="chapter-item expanded "><a href="../golang/docker-sock.html"><strong aria-hidden="true">4.7.</strong> Docker.Sock</a></li><li class="chapter-item expanded "><a href="../golang/k8s-rbac.html" class="active"><strong aria-hidden="true">4.8.</strong> k8s-RBAC访问控制</a></li><li class="chapter-item expanded "><a href="../golang/debug-with-gdb.html"><strong aria-hidden="true">4.9.</strong> 使用GDB调试</a></li><li class="chapter-item expanded "><a href="../golang/golang-template.html"><strong aria-hidden="true">4.10.</strong> GO模板处理</a></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">5.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/merge-rebase.html"><strong aria-hidden="true">5.1.</strong> 合并与变基</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">6.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../network/basic.html"><strong aria-hidden="true">6.1.</strong> 计算机网络知识点总结</a></li><li class="chapter-item expanded "><a href="../network/net-cast.html"><strong aria-hidden="true">6.2.</strong> 单播、组播、广播、任播</a></li></ol></li><li class="chapter-item expanded "><a href="../SomethingFunny/index.html"><strong aria-hidden="true">7.</strong> SomethingFunny</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SomethingFunny/1970-1-1.html"><strong aria-hidden="true">7.1.</strong> 时间的起点</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KnowledgeBank</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="rbac基于角色的访问控制"><a class="header" href="#rbac基于角色的访问控制">RBAC——基于角色的访问控制</a></h1>
+<p>This page updated at: <strong>2018/10/25</strong></p>
+<p>以下内容是 <a href="https://github.com/xingzhou">xingzhou</a> 对 kubernetes 官方文档的翻译，原文地址 https://k8smeetup.github.io/docs/admin/authorization/rbac/</p>
+<p>基于角色的访问控制（Role-Based Access Control, 即”RBAC”）使用”rbac.authorization.k8s.io” API Group实现授权决策，允许管理员通过Kubernetes API动态配置策略。</p>
+<p>截至Kubernetes 1.6，RBAC模式处于beta版本。</p>
+<p>要启用RBAC，请使用<code>--authorization-mode=RBAC</code>启动API Server。</p>
+<h2 id="api概述"><a class="header" href="#api概述">API概述</a></h2>
+<p>本节将介绍RBAC API所定义的四种顶级类型。用户可以像使用其他Kubernetes API资源一样 （例如通过<code>kubectl</code>、API调用等）与这些资源进行交互。例如，命令<code>kubectl create -f (resource).yml</code> 可以被用于以下所有的例子，当然，读者在尝试前可能需要先阅读以下相关章节的内容。</p>
+<h3 id="role与clusterrole"><a class="header" href="#role与clusterrole">Role与ClusterRole</a></h3>
+<p>在RBAC API中，一个角色包含了一套表示一组权限的规则。 权限以纯粹的累加形式累积（没有”否定”的规则）。 角色可以由命名空间（namespace）内的<code>Role</code>对象定义，而整个Kubernetes集群范围内有效的角色则通过<code>ClusterRole</code>对象实现。</p>
+<p>一个<code>Role</code>对象只能用于授予对某一单一命名空间中资源的访问权限。 以下示例描述了”default”命名空间中的一个<code>Role</code>对象的定义，用于授予对pod的读访问权限：</p>
+<pre><code class="language-yaml">kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: [&quot;&quot;] # 空字符串&quot;&quot;表明使用core API group
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+</code></pre>
+<p><code>ClusterRole</code>对象可以授予与<code>Role</code>对象相同的权限，但由于它们属于集群范围对象， 也可以使用它们授予对以下几种资源的访问权限：</p>
+<ul>
+<li>集群范围资源（例如节点，即node）</li>
+<li>非资源类型endpoint（例如”/healthz”）</li>
+<li>跨所有命名空间的命名空间范围资源（例如pod，需要运行命令<code>kubectl get pods --all-namespaces</code>来查询集群中所有的pod）</li>
+</ul>
+<p>下面示例中的<code>ClusterRole</code>定义可用于授予用户对某一特定命名空间，或者所有命名空间中的secret（取决于其<a href="https://k8smeetup.github.io/docs/admin/authorization/rbac/#rolebinding-and-clusterrolebinding">绑定</a>方式）的读访问权限：</p>
+<pre><code class="language-yaml">kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  # 鉴于ClusterRole是集群范围对象，所以这里不需要定义&quot;namespace&quot;字段
+  name: secret-reader
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;secrets&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+</code></pre>
+<h3 id="rolebinding与clusterrolebinding"><a class="header" href="#rolebinding与clusterrolebinding">RoleBinding与ClusterRoleBinding</a></h3>
+<p>角色绑定将一个角色中定义的各种权限授予一个或者一组用户。 角色绑定包含了一组相关主体（即subject, 包括用户——User、用户组——Group、或者服务账户——Service Account）以及对被授予角色的引用。 在命名空间中可以通过<code>RoleBinding</code>对象授予权限，而集群范围的权限授予则通过<code>ClusterRoleBinding</code>对象完成。</p>
+<p><code>RoleBinding</code>可以引用在同一命名空间内定义的<code>Role</code>对象。 下面示例中定义的<code>RoleBinding</code>对象在”default”命名空间中将”pod-reader”角色授予用户”jane”。 这一授权将允许用户”jane”从”default”命名空间中读取pod。</p>
+<pre><code class="language-yaml"># 以下角色绑定定义将允许用户&quot;jane&quot;从&quot;default&quot;命名空间中读取pod。
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: read-pods
+  namespace: default
+subjects:
+- kind: User
+  name: jane
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p><code>RoleBinding</code>对象也可以引用一个<code>ClusterRole</code>对象用于在<code>RoleBinding</code>所在的命名空间内授予用户对所引用的<code>ClusterRole</code>中 定义的命名空间资源的访问权限。这一点允许管理员在整个集群范围内首先定义一组通用的角色，然后再在不同的命名空间中复用这些角色。</p>
+<p>例如，尽管下面示例中的<code>RoleBinding</code>引用的是一个<code>ClusterRole</code>对象，但是用户”dave”（即角色绑定主体）还是只能读取”development” 命名空间中的secret（即<code>RoleBinding</code>所在的命名空间）。</p>
+<pre><code class="language-yaml"># 以下角色绑定允许用户&quot;dave&quot;读取&quot;development&quot;命名空间中的secret。
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: read-secrets
+  namespace: development # 这里表明仅授权读取&quot;development&quot;命名空间中的资源。
+subjects:
+- kind: User
+  name: dave
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: secret-reader
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>最后，可以使用<code>ClusterRoleBinding</code>在集群级别和所有命名空间中授予权限。下面示例中所定义的<code>ClusterRoleBinding</code> 允许在用户组”manager”中的任何用户都可以读取集群中任何命名空间中的secret。</p>
+<pre><code class="language-yaml"># 以下`ClusterRoleBinding`对象允许在用户组&quot;manager&quot;中的任何用户都可以读取集群中任何命名空间中的secret。
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: read-secrets-global
+subjects:
+- kind: Group
+  name: manager
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: secret-reader
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<h3 id="对资源的引用"><a class="header" href="#对资源的引用">对资源的引用</a></h3>
+<p>大多数资源由代表其名字的字符串表示，例如”pods”，就像它们出现在相关API endpoint的URL中一样。然而，有一些Kubernetes API还 包含了”子资源”，比如pod的logs。在Kubernetes中，pod logs endpoint的URL格式为：</p>
+<pre><code>GET /api/v1/namespaces/{namespace}/pods/{name}/log
+
+</code></pre>
+<p>在这种情况下，”pods”是命名空间资源，而”log”是pods的子资源。为了在RBAC角色中表示出这一点，我们需要使用斜线来划分资源 与子资源。如果需要角色绑定主体读取pods以及pod log，您需要定义以下角色：</p>
+<pre><code class="language-yaml">kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default
+  name: pod-and-pod-logs-reader
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;pods&quot;, &quot;pods/log&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;]
+</code></pre>
+<p>通过<code>resourceNames</code>列表，角色可以针对不同种类的请求根据资源名引用资源实例。当指定了<code>resourceNames</code>列表时，不同动作 种类的请求的权限，如使用”get”、”delete”、”update”以及”patch”等动词的请求，将被限定到资源列表中所包含的资源实例上。 例如，如果需要限定一个角色绑定主体只能”get”或者”update”一个configmap时，您可以定义以下角色：</p>
+<pre><code class="language-yaml">kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default
+  name: configmap-updater
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;configmap&quot;]
+  resourceNames: [&quot;my-configmap&quot;]
+  verbs: [&quot;update&quot;, &quot;get&quot;]
+</code></pre>
+<p>值得注意的是，如果设置了<code>resourceNames</code>，则请求所使用的动词不能是list、watch、create或者deletecollection。 由于资源名不会出现在create、list、watch和deletecollection等API请求的URL中，所以这些请求动词不会被设置了<code>resourceNames</code> 的规则所允许，因为规则中的<code>resourceNames</code>部分不会匹配这些请求。</p>
+<h4 id="一些角色定义的例子"><a class="header" href="#一些角色定义的例子">一些角色定义的例子</a></h4>
+<p>在以下示例中，我们仅截取展示了<code>rules</code>部分的定义。</p>
+<p>允许读取core API Group中定义的资源”pods”：</p>
+<pre><code class="language-yaml">rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]
+</code></pre>
+<p>允许读写在”extensions”和”apps” API Group中定义的”deployments”：</p>
+<pre><code class="language-yaml">rules:
+- apiGroups: [&quot;extensions&quot;, &quot;apps&quot;]
+  resources: [&quot;deployments&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;, &quot;create&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;]
+</code></pre>
+<p>允许读取”pods”以及读写”jobs”：</p>
+<pre><code class="language-yaml">rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]
+- apiGroups: [&quot;batch&quot;, &quot;extensions&quot;]
+  resources: [&quot;jobs&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;, &quot;create&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;]
+</code></pre>
+<p>允许读取一个名为”my-config”的<code>ConfigMap</code>实例（需要将其通过<code>RoleBinding</code>绑定从而限制针对某一个命名空间中定义的一个<code>ConfigMap</code>实例的访问）：</p>
+<pre><code class="language-yaml">rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;configmaps&quot;]
+  resourceNames: [&quot;my-config&quot;]
+  verbs: [&quot;get&quot;]
+</code></pre>
+<p>允许读取core API Group中的”nodes”资源（由于<code>Node</code>是集群级别资源，所以此<code>ClusterRole</code>定义需要与一个<code>ClusterRoleBinding</code>绑定才能有效）：</p>
+<pre><code class="language-yaml">rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;nodes&quot;]
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]
+</code></pre>
+<p>允许对非资源endpoint “/healthz”及其所有子路径的”GET”和”POST”请求（此<code>ClusterRole</code>定义需要与一个<code>ClusterRoleBinding</code>绑定才能有效）：</p>
+<pre><code class="language-yaml">rules:
+- nonResourceURLs: [&quot;/healthz&quot;, &quot;/healthz/*&quot;] # 在非资源URL中，'*'代表后缀通配符
+  verbs: [&quot;get&quot;, &quot;post&quot;]
+</code></pre>
+<h3 id="对角色绑定主体subject的引用"><a class="header" href="#对角色绑定主体subject的引用">对角色绑定主体（Subject）的引用</a></h3>
+<p><code>RoleBinding</code>或者<code>ClusterRoleBinding</code>将角色绑定到<em>角色绑定主体</em>（Subject）。 角色绑定主体可以是用户组（Group）、用户（User）或者服务账户（Service Accounts）。</p>
+<p>用户由字符串表示。可以是纯粹的用户名，例如”alice”、电子邮件风格的名字，如 “bob@example.com” 或者是用字符串表示的数字id。由Kubernetes管理员配置<a href="https://k8smeetup.github.io/docs/admin/authentication/">认证模块</a> 以产生所需格式的用户名。对于用户名，RBAC授权系统不要求任何特定的格式。然而，前缀<code>system:</code>是 为Kubernetes系统使用而保留的，所以管理员应该确保用户名不会意外地包含这个前缀。</p>
+<p>Kubernetes中的用户组信息由授权模块提供。用户组与用户一样由字符串表示。Kubernetes对用户组 字符串没有格式要求，但前缀<code>system:</code>同样是被系统保留的。</p>
+<p><a href="https://k8smeetup.github.io/docs/tasks/configure-pod-container/configure-service-account/">服务账户</a>拥有包含 <code>system:serviceaccount:</code>前缀的用户名，并属于拥有<code>system:serviceaccounts:</code>前缀的用户组。</p>
+<h4 id="角色绑定的一些例子"><a class="header" href="#角色绑定的一些例子">角色绑定的一些例子</a></h4>
+<p>以下示例中，仅截取展示了<code>RoleBinding</code>的<code>subjects</code>字段。</p>
+<p>一个名为”alice@example.com”的用户：</p>
+<pre><code class="language-yaml">subjects:
+- kind: User
+  name: &quot;alice@example.com&quot;
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>一个名为”frontend-admins”的用户组：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: &quot;frontend-admins&quot;
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>kube-system命名空间中的默认服务账户：</p>
+<pre><code class="language-yaml">subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: kube-system
+</code></pre>
+<p>名为”qa”命名空间中的所有服务账户：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: system:serviceaccounts:qa
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>在集群中的所有服务账户：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: system:serviceaccounts
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>所有认证过的用户（version 1.5+）：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: system:authenticated
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>所有未认证的用户（version 1.5+）：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: system:unauthenticated
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>所有用户（version 1.5+）：</p>
+<pre><code class="language-yaml">subjects:
+- kind: Group
+  name: system:authenticated
+  apiGroup: rbac.authorization.k8s.io
+- kind: Group
+  name: system:unauthenticated
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<h2 id="默认角色与默认角色绑定"><a class="header" href="#默认角色与默认角色绑定">默认角色与默认角色绑定</a></h2>
+<p>API Server会创建一组默认的<code>ClusterRole</code>和<code>ClusterRoleBinding</code>对象。 这些默认对象中有许多包含<code>system:</code>前缀，表明这些资源由Kubernetes基础组件”拥有”。 对这些资源的修改可能导致非功能性集群（non-functional cluster）。一个例子是<code>system:node</code> ClusterRole对象。 这个角色定义了kubelets的权限。如果这个角色被修改，可能会导致kubelets无法正常工作。</p>
+<p>所有默认的ClusterRole和ClusterRoleBinding对象都会被标记为<code>kubernetes.io/bootstrapping=rbac-defaults</code>。</p>
+<h3 id="自动更新"><a class="header" href="#自动更新">自动更新</a></h3>
+<p>每次启动时，API Server都会更新默认ClusterRole所缺乏的各种权限，并更新默认ClusterRoleBinding所缺乏的各个角色绑定主体。 这种自动更新机制允许集群修复一些意外的修改。由于权限和角色绑定主体在新的Kubernetes释出版本中可能变化，这也能够保证角色和角色 绑定始终保持是最新的。</p>
+<p>如果需要禁用自动更新，请将默认ClusterRole以及ClusterRoleBinding的<code>rbac.authorization.kubernetes.io/autoupdate</code> 设置成为<code>false</code>。 请注意，缺乏默认权限和角色绑定主体可能会导致非功能性集群问题。</p>
+<p>自Kubernetes 1.6+起，当集群RBAC授权器（RBAC Authorizer）处于开启状态时，可以启用自动更新功能.</p>
+<h3 id="发现类角色"><a class="header" href="#发现类角色">发现类角色</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>默认ClusterRole</th><th>默认ClusterRoleBinding</th><th>描述</th></tr></thead><tbody>
+<tr><td><strong>system:basic-user</strong></td><td><strong>system:authenticated</strong> and <strong>system:unauthenticated</strong>groups</td><td>允许用户只读访问有关自己的基本信息。</td></tr>
+<tr><td><strong>system:discovery</strong></td><td><strong>system:authenticated</strong> and <strong>system:unauthenticated</strong>groups</td><td>允许只读访问API discovery endpoints, 用于在API级别进行发现和协商。</td></tr>
+</tbody></table>
+</div>
+<h3 id="面向用户的角色"><a class="header" href="#面向用户的角色">面向用户的角色</a></h3>
+<p>一些默认角色并不包含<code>system:</code>前缀，它们是面向用户的角色。 这些角色包含超级用户角色（<code>cluster-admin</code>），即旨在利用ClusterRoleBinding（<code>cluster-status</code>）在集群范围内授权的角色， 以及那些使用RoleBinding（<code>admin</code>、<code>edit</code>和<code>view</code>）在特定命名空间中授权的角色。</p>
+<div class="table-wrapper"><table><thead><tr><th>默认ClusterRole</th><th>默认ClusterRoleBinding</th><th>描述</th></tr></thead><tbody>
+<tr><td><strong>cluster-admin</strong></td><td><strong>system:masters</strong> group</td><td>超级用户权限，允许对任何资源执行任何操作。 在<strong>ClusterRoleBinding</strong>中使用时，可以完全控制集群和所有命名空间中的所有资源。 在<strong>RoleBinding</strong>中使用时，可以完全控制RoleBinding所在命名空间中的所有资源，包括命名空间自己。</td></tr>
+<tr><td><strong>admin</strong></td><td>None</td><td>管理员权限，利用<strong>RoleBinding</strong>在某一命名空间内部授予。 在<strong>RoleBinding</strong>中使用时，允许针对命名空间内大部分资源的读写访问， 包括在命名空间内创建角色与角色绑定的能力。 但不允许对资源配额（resource quota）或者命名空间本身的写访问。</td></tr>
+<tr><td><strong>edit</strong></td><td>None</td><td>允许对某一个命名空间内大部分对象的读写访问，但不允许查看或者修改角色或者角色绑定。</td></tr>
+<tr><td><strong>view</strong></td><td>None</td><td>允许对某一个命名空间内大部分对象的只读访问。 不允许查看角色或者角色绑定。 由于可扩散性等原因，不允许查看secret资源。</td></tr>
+</tbody></table>
+</div>
+<h3 id="core-component-roles"><a class="header" href="#core-component-roles">Core Component Roles</a></h3>
+<h3 id="核心组件角色"><a class="header" href="#核心组件角色">核心组件角色</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>默认ClusterRole</th><th>默认ClusterRoleBinding</th><th>描述</th></tr></thead><tbody>
+<tr><td><strong>system:kube-scheduler</strong></td><td><strong>system:kube-scheduler</strong> user</td><td>允许访问kube-scheduler组件所需要的资源。</td></tr>
+<tr><td><strong>system:kube-controller-manager</strong></td><td><strong>system:kube-controller-manager</strong> user</td><td>允许访问kube-controller-manager组件所需要的资源。 单个控制循环所需要的权限请参阅<a href="https://k8smeetup.github.io/docs/admin/authorization/rbac/#controller-roles">控制器（controller）角色</a>.</td></tr>
+<tr><td><strong>system:node</strong></td><td><strong>system:nodes</strong> group (deprecated in 1.7)</td><td>允许对kubelet组件所需要的资源的访问，<strong>包括读取所有secret和对所有pod的写访问</strong>。 自Kubernetes 1.7开始, 相比较于这个角色，更推荐使用<a href="https://kubernetes.io/docs/admin/authorization/node/">Node authorizer</a> 以及<a href="https://kubernetes.io/docs/admin/admission-controllers#NodeRestriction">NodeRestriction admission plugin</a>， 并允许根据调度运行在节点上的pod授予kubelets API访问的权限。 自Kubernetes 1.7开始，当启用<code>Node</code>授权模式时，对<code>system:nodes</code>用户组的绑定将不会被自动创建。</td></tr>
+<tr><td><strong>system:node-proxier</strong></td><td><strong>system:kube-proxy</strong> user</td><td>允许对kube-proxy组件所需要资源的访问。</td></tr>
+</tbody></table>
+</div>
+<h3 id="其它组件角色"><a class="header" href="#其它组件角色">其它组件角色</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>默认ClusterRole</th><th>默认ClusterRoleBinding</th><th>描述</th></tr></thead><tbody>
+<tr><td><strong>system:auth-delegator</strong></td><td>None</td><td>允许委托认证和授权检查。 通常由附加API Server用于统一认证和授权。</td></tr>
+<tr><td><strong>system:heapster</strong></td><td>None</td><td><a href="https://github.com/kubernetes/heapster">Heapster</a>组件的角色。</td></tr>
+<tr><td><strong>system:kube-aggregator</strong></td><td>None</td><td><a href="https://github.com/kubernetes/kube-aggregator">kube-aggregator</a>组件的角色。</td></tr>
+<tr><td><strong>system:kube-dns</strong></td><td><strong>kube-dns</strong> service account in the <strong>kube-system</strong>namespace</td><td><a href="https://k8smeetup.github.io/docs/admin/dns/">kube-dns</a>组件的角色。</td></tr>
+<tr><td><strong>system:node-bootstrapper</strong></td><td>None</td><td>允许对执行<a href="https://k8smeetup.github.io/docs/admin/kubelet-tls-bootstrapping/">Kubelet TLS引导（Kubelet TLS bootstrapping）</a>所需要资源的访问.</td></tr>
+<tr><td><strong>system:node-problem-detector</strong></td><td>None</td><td><a href="https://github.com/kubernetes/node-problem-detector">node-problem-detector</a>组件的角色。</td></tr>
+<tr><td><strong>system:persistent-volume-provisioner</strong></td><td>None</td><td>允许对大部分<a href="https://k8smeetup.github.io/docs/user-guide/persistent-volumes/#provisioner">动态存储卷创建组件（dynamic volume provisioner）</a>所需要资源的访问。</td></tr>
+</tbody></table>
+</div>
+<h3 id="控制器controller角色"><a class="header" href="#控制器controller角色">控制器（Controller）角色</a></h3>
+<p><a href="https://k8smeetup.github.io/docs/admin/kube-controller-manager/">Kubernetes controller manager</a>负责运行核心控制循环。 当使用<code>--use-service-account-credentials</code>选项运行controller manager时，每个控制循环都将使用单独的服务账户启动。 而每个控制循环都存在对应的角色，前缀名为<code>system:controller:</code>。 如果不使用<code>--use-service-account-credentials</code>选项时，controller manager将会使用自己的凭证运行所有控制循环，而这些凭证必须被授予相关的角色。 这些角色包括：</p>
+<ul>
+<li>system:controller:attachdetach-controller</li>
+<li>system:controller:certificate-controller</li>
+<li>system:controller:cronjob-controller</li>
+<li>system:controller:daemon-set-controller</li>
+<li>system:controller:deployment-controller</li>
+<li>system:controller:disruption-controller</li>
+<li>system:controller:endpoint-controller</li>
+<li>system:controller:generic-garbage-collector</li>
+<li>system:controller:horizontal-pod-autoscaler</li>
+<li>system:controller:job-controller</li>
+<li>system:controller:namespace-controller</li>
+<li>system:controller:node-controller</li>
+<li>system:controller:persistent-volume-binder</li>
+<li>system:controller:pod-garbage-collector</li>
+<li>system:controller:replicaset-controller</li>
+<li>system:controller:replication-controller</li>
+<li>system:controller:resourcequota-controller</li>
+<li>system:controller:route-controller</li>
+<li>system:controller:service-account-controller</li>
+<li>system:controller:service-controller</li>
+<li>system:controller:statefulset-controller</li>
+<li>system:controller:ttl-controller</li>
+</ul>
+<h2 id="初始化与预防权限升级"><a class="header" href="#初始化与预防权限升级">初始化与预防权限升级</a></h2>
+<p>RBAC API会阻止用户通过编辑角色或者角色绑定来升级权限。 由于这一点是在API级别实现的，所以在RBAC授权器（RBAC authorizer）未启用的状态下依然可以正常工作。</p>
+<p>用户只有在拥有了角色所包含的所有权限的条件下才能创建／更新一个角色，这些操作还必须在角色所处的相同范围内进行（对于<code>ClusterRole</code>来说是集群范围，对于<code>Role</code>来说是在与角色相同的命名空间或者集群范围）。 例如，如果用户”user-1”没有权限读取集群范围内的secret列表，那么他也不能创建包含这种权限的<code>ClusterRole</code>。为了能够让用户创建／更新角色，需要：</p>
+<ol>
+<li>授予用户一个角色以允许他们根据需要创建／更新<code>Role</code>或者<code>ClusterRole</code>对象。</li>
+<li>授予用户一个角色包含他们在<code>Role</code>或者<code>ClusterRole</code>中所能够设置的所有权限。如果用户尝试创建或者修改<code>Role</code>或者<code>ClusterRole</code>以设置那些他们未被授权的权限时，这些API请求将被禁止。</li>
+</ol>
+<p>用户只有在拥有所引用的角色中包含的所有权限时才可以创建／更新角色绑定（这些操作也必须在角色绑定所处的相同范围内进行）<em>或者</em>用户被明确授权可以在所引用的角色上执行绑定操作。 例如，如果用户”user-1”没有权限读取集群范围内的secret列表，那么他将不能创建<code>ClusterRole</code>来引用那些授予了此项权限的角色。为了能够让用户创建／更新角色绑定，需要：</p>
+<ol>
+<li>授予用户一个角色以允许他们根据需要创建／更新<code>RoleBinding</code>或者<code>ClusterRoleBinding</code>对象。</li>
+<li>授予用户绑定某一特定角色所需要的权限：
+<ul>
+<li>隐式地，通过授予用户所有所引用的角色中所包含的权限</li>
+<li>显式地，通过授予用户在特定Role（或者ClusterRole）对象上执行<code>bind</code>操作的权限</li>
+</ul>
+</li>
+</ol>
+<p>例如，下面例子中的ClusterRole和RoleBinding将允许用户”user-1”授予其它用户”user-1-namespace”命名空间内的<code>admin</code>、<code>edit</code>和<code>view</code>等角色和角色绑定。</p>
+<pre><code class="language-yaml">apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: role-grantor
+rules:
+- apiGroups: [&quot;rbac.authorization.k8s.io&quot;]
+  resources: [&quot;rolebindings&quot;]
+  verbs: [&quot;create&quot;]
+- apiGroups: [&quot;rbac.authorization.k8s.io&quot;]
+  resources: [&quot;clusterroles&quot;]
+  verbs: [&quot;bind&quot;]
+  resourceNames: [&quot;admin&quot;,&quot;edit&quot;,&quot;view&quot;]
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: role-grantor-binding
+  namespace: user-1-namespace
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: role-grantor
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: user-1
+</code></pre>
+<p>当初始化第一个角色和角色绑定时，初始用户需要能够授予他们尚未拥有的权限。 初始化初始角色和角色绑定时需要：</p>
+<ul>
+<li>使用包含<code>system：masters</code>用户组的凭证，该用户组通过默认绑定绑定到<code>cluster-admin</code>超级用户角色。</li>
+<li>如果您的API Server在运行时启用了非安全端口（<code>--insecure-port</code>），您也可以通过这个没有施行认证或者授权的端口发送角色或者角色绑定请求。</li>
+</ul>
+<h2 id="一些命令行工具"><a class="header" href="#一些命令行工具">一些命令行工具</a></h2>
+<p>有两个<code>kubectl</code>命令可以用于在命名空间内或者整个集群内授予角色。</p>
+<h3 id="kubectl-create-rolebinding"><a class="header" href="#kubectl-create-rolebinding"><code>kubectl create rolebinding</code></a></h3>
+<p>在某一特定命名空间内授予<code>Role</code>或者<code>ClusterRole</code>。示例如下：</p>
+<ul>
+<li>
+<p>在名为”acme”的命名空间中将<code>admin</code> <code>ClusterRole</code>授予用户”bob”：</p>
+<p><code>kubectl create rolebinding bob-admin-binding --clusterrole=admin --user=bob --namespace=acme</code></p>
+</li>
+<li>
+<p>在名为”acme”的命名空间中将<code>view</code> <code>ClusterRole</code>授予服务账户”myapp”：</p>
+<p><code>kubectl create rolebinding myapp-view-binding --clusterrole=view --serviceaccount=acme:myapp --namespace=acme</code></p>
+</li>
+</ul>
+<h3 id="kubectl-create-clusterrolebinding"><a class="header" href="#kubectl-create-clusterrolebinding"><code>kubectl create clusterrolebinding</code></a></h3>
+<p>在整个集群中授予<code>ClusterRole</code>，包括所有命名空间。示例如下：</p>
+<ul>
+<li>
+<p>在整个集群范围内将<code>cluster-admin</code> <code>ClusterRole</code>授予用户”root”：</p>
+<p><code>kubectl create clusterrolebinding root-cluster-admin-binding --clusterrole=cluster-admin --user=root</code></p>
+</li>
+<li>
+<p>在整个集群范围内将<code>system:node</code> <code>ClusterRole</code>授予用户”kubelet”：</p>
+<p><code>kubectl create clusterrolebinding kubelet-node-binding --clusterrole=system:node --user=kubelet</code></p>
+</li>
+<li>
+<p>在整个集群范围内将<code>view</code> <code>ClusterRole</code>授予命名空间”acme”内的服务账户”myapp”：</p>
+<p><code>kubectl create clusterrolebinding myapp-view-binding --clusterrole=view --serviceaccount=acme:myapp</code></p>
+</li>
+</ul>
+<p>请参阅CLI帮助文档以获得上述命令的详细用法</p>
+<h2 id="服务账户service-account权限"><a class="header" href="#服务账户service-account权限">服务账户（Service Account）权限</a></h2>
+<p>默认的RBAC策略将授予控制平面组件（control-plane component）、节点（node）和控制器（controller）一组范围受限的权限， 但对于”kube-system”命名空间以外的服务账户，则<em>不授予任何权限</em>（超出授予所有认证用户的发现权限）。</p>
+<p>这一点允许您根据需要向特定服务账号授予特定权限。 细粒度的角色绑定将提供更好的安全性，但需要更多精力管理。 更粗粒度的授权可能授予服务账号不需要的API访问权限（甚至导致潜在授权扩散），但更易于管理。</p>
+<p>从最安全到最不安全可以排序以下方法：</p>
+<ol>
+<li>
+<p>对某一特定应用程序的服务账户授予角色（最佳实践）</p>
+<p>要求应用程序在其pod规范（pod spec）中指定<code>serviceAccountName</code>字段，并且要创建相应服务账户（例如通过API、应用程序清单或者命令<code>kubectl create serviceaccount</code>等）。</p>
+<p>例如，在”my-namespace”命名空间中授予服务账户”my-sa”只读权限：</p>
+<pre><code class="language-bash">kubectl create rolebinding my-sa-view \
+  --clusterrole=view \
+  --serviceaccount=my-namespace:my-sa \
+  --namespace=my-namespace
+</code></pre>
+</li>
+<li>
+<p>在某一命名空间中授予”default”服务账号一个角色</p>
+<p>如果一个应用程序没有在其pod规范中指定<code>serviceAccountName</code>，它将默认使用”default”服务账号。</p>
+<p>注意：授予”default”服务账号的权限将可用于命名空间内任何没有指定<code>serviceAccountName</code>的pod。</p>
+<p>下面的例子将在”my-namespace”命名空间内授予”default”服务账号只读权限：</p>
+<pre><code class="language-bash">kubectl create rolebinding default-view \
+  --clusterrole=view \
+  --serviceaccount=my-namespace:default \
+  --namespace=my-namespace
+</code></pre>
+<p>目前，许多[加载项（addon）]（/ docs / concepts / cluster-administration / addons /）作为”kube-system”命名空间中的”default”服务帐户运行。 要允许这些加载项使用超级用户访问权限，请将cluster-admin权限授予”kube-system”命名空间中的”default”服务帐户。 注意：启用上述操作意味着”kube-system”命名空间将包含允许超级用户访问API的秘钥。</p>
+<pre><code class="language-bash">kubectl create clusterrolebinding add-on-cluster-admin \
+  --clusterrole=cluster-admin \
+  --serviceaccount=kube-system:default
+</code></pre>
+</li>
+<li>
+<p>为命名空间中所有的服务账号授予角色</p>
+<p>如果您希望命名空间内的所有应用程序都拥有同一个角色，无论它们使用什么服务账户，您可以为该命名空间的服务账户用户组授予角色。</p>
+<p>下面的例子将授予”my-namespace”命名空间中的所有服务账户只读权限：</p>
+<pre><code class="language-bash">kubectl create rolebinding serviceaccounts-view \
+  --clusterrole=view \
+  --group=system:serviceaccounts:my-namespace \
+  --namespace=my-namespace
+</code></pre>
+</li>
+<li>
+<p>对集群范围内的所有服务账户授予一个受限角色（不鼓励）</p>
+<p>如果您不想管理每个命名空间的权限，则可以将集群范围角色授予所有服务帐户。</p>
+<p>下面的例子将所有命名空间中的只读权限授予集群中的所有服务账户：</p>
+<pre><code class="language-bash">kubectl create clusterrolebinding serviceaccounts-view \
+  --clusterrole=view \
+  --group=system:serviceaccounts
+</code></pre>
+</li>
+<li>
+<p>授予超级用户访问权限给集群范围内的所有服务帐户（强烈不鼓励）</p>
+<p>如果您根本不关心权限分块，您可以对所有服务账户授予超级用户访问权限。</p>
+<p>警告：这种做法将允许任何具有读取权限的用户访问secret或者通过创建一个容器的方式来访问超级用户的凭据。</p>
+<pre><code class="language-bash">kubectl create clusterrolebinding serviceaccounts-cluster-admin \
+  --clusterrole=cluster-admin \
+  --group=system:serviceaccounts
+</code></pre>
+</li>
+</ol>
+<h2 id="从版本15升级"><a class="header" href="#从版本15升级">从版本1.5升级</a></h2>
+<p>在Kubernetes 1.6之前，许多部署使用非常宽泛的ABAC策略，包括授予对所有服务帐户的完整API访问权限。</p>
+<p>默认的RBAC策略将授予控制平面组件（control-plane components）、节点（nodes）和控制器（controller）一组范围受限的权限， 但对于”kube-system”命名空间以外的服务账户，则<em>不授予任何权限</em>（超出授予所有认证用户的发现权限）。</p>
+<p>虽然安全性更高，但这可能会影响到期望自动接收API权限的现有工作负载。 以下是管理此转换的两种方法：</p>
+<h3 id="并行授权器authorizer"><a class="header" href="#并行授权器authorizer">并行授权器（authorizer）</a></h3>
+<p>同时运行RBAC和ABAC授权器，并包括旧版ABAC策略：</p>
+<pre><code>--authorization-mode=RBAC,ABAC --authorization-policy-file=mypolicy.jsonl
+
+</code></pre>
+<p>RBAC授权器将尝试首先授权请求。如果RBAC授权器拒绝API请求，则ABAC授权器将被运行。这意味着RBAC策略<em>或者</em>ABAC策略所允许的任何请求都是可通过的。</p>
+<p>当以日志级别为2或更高（<code>--v = 2</code>）运行时，您可以在API Server日志中看到RBAC拒绝请求信息（以<code>RBAC DENY:</code>为前缀）。 您可以使用该信息来确定哪些角色需要授予哪些用户，用户组或服务帐户。 一旦<a href="https://k8smeetup.github.io/docs/admin/authorization/rbac/#service-account-permissions">授予服务帐户角色</a>，并且服务器日志中没有RBAC拒绝消息的工作负载正在运行，您可以删除ABAC授权器。</p>
+<h3 id="宽泛的rbac权限"><a class="header" href="#宽泛的rbac权限">宽泛的RBAC权限</a></h3>
+<p>您可以使用RBAC角色绑定来复制一个宽泛的策略。</p>
+<p><strong>警告：以下政策略允许所有服务帐户作为集群管理员。 运行在容器中的任何应用程序都会自动接收服务帐户凭据，并且可以对API执行任何操作，包括查看secret和修改权限。 因此，并不推荐使用这种策略。</strong></p>
+<pre><code class="language-bash">kubectl create clusterrolebinding permissive-binding \
+  --clusterrole=cluster-admin \
+  --user=admin \
+  --user=kubelet \
+  --group=system:serviceaccounts
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../golang/docker-sock.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../golang/debug-with-gdb.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../golang/docker-sock.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../golang/debug-with-gdb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

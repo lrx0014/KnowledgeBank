@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Go测试框架 - KnowledgeBank</title>
+
+
+        <!-- Custom HTML head -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6994154364754088"
+             crossorigin="anonymous"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../linux/index.html"><strong aria-hidden="true">2.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/linux-inside.html"><strong aria-hidden="true">2.1.</strong> Linux-Inside</a></li><li class="chapter-item expanded "><a href="../linux/vim.html"><strong aria-hidden="true">2.2.</strong> 使用VIM</a></li></ol></li><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">3.</strong> JAVA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/proxy.html"><strong aria-hidden="true">3.1.</strong> 代理模式</a></li></ol></li><li class="chapter-item expanded "><a href="../golang/index.html"><strong aria-hidden="true">4.</strong> GO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../golang/go-internals.html"><strong aria-hidden="true">4.1.</strong> 深入解析GO</a></li><li class="chapter-item expanded "><a href="../golang/goroutine.html"><strong aria-hidden="true">4.2.</strong> 协程的正确用法</a></li><li class="chapter-item expanded "><a href="../golang/goroutine-pool.html"><strong aria-hidden="true">4.3.</strong> 协程池</a></li><li class="chapter-item expanded "><a href="../golang/init-main.html"><strong aria-hidden="true">4.4.</strong> 调用顺序</a></li><li class="chapter-item expanded "><a href="../golang/cross-compile.html"><strong aria-hidden="true">4.5.</strong> 交叉编译</a></li><li class="chapter-item expanded "><a href="../golang/golang-test.html" class="active"><strong aria-hidden="true">4.6.</strong> Go测试框架</a></li><li class="chapter-item expanded "><a href="../golang/docker-sock.html"><strong aria-hidden="true">4.7.</strong> Docker.Sock</a></li><li class="chapter-item expanded "><a href="../golang/k8s-rbac.html"><strong aria-hidden="true">4.8.</strong> k8s-RBAC访问控制</a></li><li class="chapter-item expanded "><a href="../golang/debug-with-gdb.html"><strong aria-hidden="true">4.9.</strong> 使用GDB调试</a></li><li class="chapter-item expanded "><a href="../golang/golang-template.html"><strong aria-hidden="true">4.10.</strong> GO模板处理</a></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">5.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/merge-rebase.html"><strong aria-hidden="true">5.1.</strong> 合并与变基</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">6.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../network/basic.html"><strong aria-hidden="true">6.1.</strong> 计算机网络知识点总结</a></li><li class="chapter-item expanded "><a href="../network/net-cast.html"><strong aria-hidden="true">6.2.</strong> 单播、组播、广播、任播</a></li></ol></li><li class="chapter-item expanded "><a href="../SomethingFunny/index.html"><strong aria-hidden="true">7.</strong> SomethingFunny</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SomethingFunny/1970-1-1.html"><strong aria-hidden="true">7.1.</strong> 时间的起点</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KnowledgeBank</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="golang的测试框架"><a class="header" href="#golang的测试框架">Golang的测试框架</a></h1>
+<p>This page updated at: <strong>2018/10/22</strong></p>
+<h2 id="前言"><a class="header" href="#前言">前言</a></h2>
+<p>每种语言都有自己的测试姿势，golang的作者提供了一个testing的包来供大家完成测试之旅，简单好用，一起走一波。</p>
+<p>10s后以下知识点即将靠近： </p>
+<ul>
+<li>1.为什么需要测试？ </li>
+<li>2.Golang的测试规矩 </li>
+<li>3.功能测试 </li>
+<li>4.压力测试 </li>
+<li>5.测试代码的覆盖率测试 </li>
+<li>6.测试所有的参数备忘</li>
+</ul>
+<h2 id="1为什么需要测试"><a class="header" href="#1为什么需要测试">1.为什么需要测试？</a></h2>
+<p>这个是一个老生常谈的话题了，忘记哪里看的数据了，表明是完善的测试体系（这里主要指自测），其实是会提高开发效率的。</p>
+<p>当项目足够复杂的时候，想要保证尽可能少的bug，两种方式最有效：1.代码审核 2.测试。</p>
+<p>所以Golang官方提供了testing包来满足大家的需求。</p>
+<h2 id="2golang的测试规矩"><a class="header" href="#2golang的测试规矩">2.Golang的测试规矩</a></h2>
+<p>通过testing包我们主要是可以进行三个测试的姿势：1.功能测试 2.压力测试 3.测试代码覆盖率的测试(你写的测试用例覆盖了多少代码)。</p>
+<p>在介绍以上三点之前，有一些Golang官方的一些约定（也可以说测试规矩）是需要遵守的，否则Golang是不承认你写的测试代码的。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">关键点</th><th style="text-align: left">说明</th></tr></thead><tbody>
+<tr><td style="text-align: left">导入需要的包</td><td style="text-align: left">import testing (如果你是goland,那么可以忽略，因为ide就自动帮你加上)</td></tr>
+<tr><td style="text-align: left">执行命令</td><td style="text-align: left">go test file_test.go</td></tr>
+<tr><td style="text-align: left">测试文件命名</td><td style="text-align: left">必须以_test.go结尾</td></tr>
+<tr><td style="text-align: left">功能测试的用力函数</td><td style="text-align: left">必须以Test开头&amp;&amp;后头跟着的函数名不能以小写字母开头，比如：Testcbs 就是不行的，TestCbs就是ok的</td></tr>
+<tr><td style="text-align: left">功能测试参数</td><td style="text-align: left">testing.T</td></tr>
+<tr><td style="text-align: left">压力测试用例函数</td><td style="text-align: left">必须以Benchmark开头&amp;&amp;其后的函数名不能以小写字母开头(例子同上)</td></tr>
+<tr><td style="text-align: left">压力测试参数</td><td style="text-align: left">testing.B</td></tr>
+<tr><td style="text-align: left">测试信息</td><td style="text-align: left">.Log方法，默认情况下是不会显示的，只有在go test -v的时候显示</td></tr>
+<tr><td style="text-align: left">测试控制</td><td style="text-align: left">通过Error/Errorf/FailNow/Fatal等来进行测试是否是失败，或者在失败的情况下的控制</td></tr>
+<tr><td style="text-align: left">压力测试命令</td><td style="text-align: left">go test -test.bench file_test.go</td></tr>
+<tr><td style="text-align: left">压力测试的循环体</td><td style="text-align: left">使用test.B.N</td></tr>
+</tbody></table>
+</div>
+<h2 id="3功能测试"><a class="header" href="#3功能测试">3.功能测试</a></h2>
+<p>我创建了一个文件夹gotest，里头存在两个文件：1.正式文件cbstest.go 2.测试文件cbstest_test.go</p>
+<p>上代码: </p>
+<blockquote>
+<p>cbstest.go</p>
+</blockquote>
+<pre><code class="language-golang">package gotest
+
+// 根据长宽获取面积
+func GetArea(weight int, height int) int {
+    return weight*height
+}
+</code></pre>
+<blockquote>
+<p>cbstest_test.go:</p>
+</blockquote>
+<pre><code class="language-golang">package gotest
+
+import &quot;testing&quot;
+
+func TestGetArea(t *testing.T) {
+    area := GetArea(40, 50)
+    if area != 2000 {
+        t.Error(&quot;测试失败&quot;)
+    }
+}
+</code></pre>
+<p><img src="./../images/golang/go-test.png" alt="go test" /></p>
+<h3 id="4压力测试"><a class="header" href="#4压力测试">4.压力测试</a></h3>
+<p>cbstest_test.go改造代码为压力测试：</p>
+<pre><code class="language-golang">package gotest
+
+import &quot;testing&quot;
+
+func BenchmarkGetArea(t *testing.B) {
+
+    for i := 0; i &lt; t.N; i++ {
+        GetArea(40, 50)
+    }
+}
+</code></pre>
+<p><img src="./../images/golang/go-test-bench.png" alt="go test" /></p>
+<h2 id="5测试代码的覆盖率测试"><a class="header" href="#5测试代码的覆盖率测试">5.测试代码的覆盖率测试</a></h2>
+<p>执行命令：go test -cover</p>
+<p><img src="./../images/golang/go-test-cover.png" alt="go test" /></p>
+<blockquote>
+<p>需要特别说明的是，测试的覆盖度正常情况下是跑不满100%，比如说写的代码是来接住panic的等等异常的，那其实就不会走到了。</p>
+</blockquote>
+<h2 id="6测试所有的参数备忘"><a class="header" href="#6测试所有的参数备忘">6.测试所有的参数备忘</a></h2>
+<p>The test binary also accepts flags that control execution of the test; these 
+flags are also accessible by ‘go test’.</p>
+<pre><code class="language-shell">    -bench regexp
+        Run only those benchmarks matching a regular expression.
+        By default, no benchmarks are run.
+        To run all benchmarks, use '-bench .' or '-bench=.'.
+        The regular expression is split by unbracketed slash (/)
+        characters into a sequence of regular expressions, and each
+        part of a benchmark's identifier must match the corresponding
+        element in the sequence, if any. Possible parents of matches
+        are run with b.N=1 to identify sub-benchmarks. For example,
+        given -bench=X/Y, top-level benchmarks matching X are run
+        with b.N=1 to find any sub-benchmarks matching Y, which are
+        then run in full.
+
+    -benchtime t
+        Run enough iterations of each benchmark to take t, specified
+        as a time.Duration (for example, -benchtime 1h30s).
+        The default is 1 second (1s).
+
+    -count n
+        Run each test and benchmark n times (default 1).
+        If -cpu is set, run n times for each GOMAXPROCS value.
+        Examples are always run once.
+
+    -cover
+        Enable coverage analysis.
+        Note that because coverage works by annotating the source
+        code before compilation, compilation and test failures with
+        coverage enabled may report line numbers that don't correspond
+        to the original sources.
+
+    -covermode set,count,atomic
+        Set the mode for coverage analysis for the package[s]
+        being tested. The default is &quot;set&quot; unless -race is enabled,
+        in which case it is &quot;atomic&quot;.
+        The values:
+            set: bool: does this statement run?
+            count: int: how many times does this statement run?
+            atomic: int: count, but correct in multithreaded tests;
+                    significantly more expensive.
+        Sets -cover.
+
+    -coverpkg pattern1,pattern2,pattern3
+        Apply coverage analysis in each test to packages matching the patterns.
+        The default is for each test to analyze only the package being tested.
+        See 'go help packages' for a description of package patterns.
+        Sets -cover.
+
+    -cpu 1,2,4
+        Specify a list of GOMAXPROCS values for which the tests or
+        benchmarks should be executed. The default is the current value
+        of GOMAXPROCS.
+
+    -failfast
+        Do not start new tests after the first test failure.
+
+    -list regexp
+        List tests, benchmarks, or examples matching the regular expression.
+        No tests, benchmarks or examples will be run. This will only
+        list top-level tests. No subtest or subbenchmarks will be shown.
+
+    -parallel n
+        Allow parallel execution of test functions that call t.Parallel.
+        The value of this flag is the maximum number of tests to run
+        simultaneously; by default, it is set to the value of GOMAXPROCS.
+        Note that -parallel only applies within a single test binary.
+        The 'go test' command may run tests for different packages
+        in parallel as well, according to the setting of the -p flag
+        (see 'go help build').
+
+    -run regexp
+        Run only those tests and examples matching the regular expression.
+        For tests, the regular expression is split by unbracketed slash (/)
+        characters into a sequence of regular expressions, and each part
+        of a test's identifier must match the corresponding element in
+        the sequence, if any. Note that possible parents of matches are
+        run too, so that -run=X/Y matches and runs and reports the result
+        of all tests matching X, even those without sub-tests matching Y,
+        because it must run them to look for those sub-tests.
+
+    -short
+        Tell long-running tests to shorten their run time.
+        It is off by default but set during all.bash so that installing
+        the Go tree can run a sanity check but not spend time running
+        exhaustive tests.
+
+    -timeout d
+        If a test binary runs longer than duration d, panic.
+        If d is 0, the timeout is disabled.
+        The default is 10 minutes (10m).
+
+    -v
+        Verbose output: log all tests as they are run. Also print all
+        text from Log and Logf calls even if the test succeeds.
+
+    -vet list
+        Configure the invocation of &quot;go vet&quot; during &quot;go test&quot;
+        to use the comma-separated list of vet checks.
+        If list is empty, &quot;go test&quot; runs &quot;go vet&quot; with a curated list of
+        checks believed to be always worth addressing.
+        If list is &quot;off&quot;, &quot;go test&quot; does not run &quot;go vet&quot; at all.
+</code></pre>
+<p>The following flags are also recognized by ‘go test’ and can be used to 
+profile the tests during execution:</p>
+<pre><code class="language-shell">    -benchmem
+        Print memory allocation statistics for benchmarks.
+
+    -blockprofile block.out
+        Write a goroutine blocking profile to the specified file
+        when all tests are complete.
+        Writes test binary as -c would.
+
+    -blockprofilerate n
+        Control the detail provided in goroutine blocking profiles by
+        calling runtime.SetBlockProfileRate with n.
+        See 'go doc runtime.SetBlockProfileRate'.
+        The profiler aims to sample, on average, one blocking event every
+        n nanoseconds the program spends blocked. By default,
+        if -test.blockprofile is set without this flag, all blocking events
+        are recorded, equivalent to -test.blockprofilerate=1.
+
+    -coverprofile cover.out
+        Write a coverage profile to the file after all tests have passed.
+        Sets -cover.
+
+    -cpuprofile cpu.out
+        Write a CPU profile to the specified file before exiting.
+        Writes test binary as -c would.
+
+    -memprofile mem.out
+        Write a memory profile to the file after all tests have passed.
+        Writes test binary as -c would.
+
+    -memprofilerate n
+        Enable more precise (and expensive) memory profiles by setting
+        runtime.MemProfileRate. See 'go doc runtime.MemProfileRate'.
+        To profile all memory allocations, use -test.memprofilerate=1
+        and pass --alloc_space flag to the pprof tool.
+
+    -mutexprofile mutex.out
+        Write a mutex contention profile to the specified file
+        when all tests are complete.
+        Writes test binary as -c would.
+
+    -mutexprofilefraction n
+        Sample 1 in n stack traces of goroutines holding a
+        contended mutex.
+
+    -outputdir directory
+        Place output files from profiling in the specified directory,
+        by default the directory in which &quot;go test&quot; is running.
+
+    -trace trace.out
+        Write an execution trace to the specified file before exiting.
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../golang/cross-compile.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../golang/docker-sock.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../golang/cross-compile.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../golang/docker-sock.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
