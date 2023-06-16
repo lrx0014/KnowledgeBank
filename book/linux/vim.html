@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>使用VIM - KnowledgeBank</title>
+
+
+        <!-- Custom HTML head -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6994154364754088"
+             crossorigin="anonymous"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../linux/index.html"><strong aria-hidden="true">2.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/linux-inside.html"><strong aria-hidden="true">2.1.</strong> Linux-Inside</a></li><li class="chapter-item expanded "><a href="../linux/vim.html" class="active"><strong aria-hidden="true">2.2.</strong> 使用VIM</a></li></ol></li><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">3.</strong> JAVA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/proxy.html"><strong aria-hidden="true">3.1.</strong> 代理模式</a></li></ol></li><li class="chapter-item expanded "><a href="../golang/index.html"><strong aria-hidden="true">4.</strong> GO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../golang/go-internals.html"><strong aria-hidden="true">4.1.</strong> 深入解析GO</a></li><li class="chapter-item expanded "><a href="../golang/goroutine.html"><strong aria-hidden="true">4.2.</strong> 协程的正确用法</a></li><li class="chapter-item expanded "><a href="../golang/goroutine-pool.html"><strong aria-hidden="true">4.3.</strong> 协程池</a></li><li class="chapter-item expanded "><a href="../golang/init-main.html"><strong aria-hidden="true">4.4.</strong> 调用顺序</a></li><li class="chapter-item expanded "><a href="../golang/cross-compile.html"><strong aria-hidden="true">4.5.</strong> 交叉编译</a></li><li class="chapter-item expanded "><a href="../golang/golang-test.html"><strong aria-hidden="true">4.6.</strong> Go测试框架</a></li><li class="chapter-item expanded "><a href="../golang/docker-sock.html"><strong aria-hidden="true">4.7.</strong> Docker.Sock</a></li><li class="chapter-item expanded "><a href="../golang/k8s-rbac.html"><strong aria-hidden="true">4.8.</strong> k8s-RBAC访问控制</a></li><li class="chapter-item expanded "><a href="../golang/debug-with-gdb.html"><strong aria-hidden="true">4.9.</strong> 使用GDB调试</a></li><li class="chapter-item expanded "><a href="../golang/golang-template.html"><strong aria-hidden="true">4.10.</strong> GO模板处理</a></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">5.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/merge-rebase.html"><strong aria-hidden="true">5.1.</strong> 合并与变基</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">6.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../network/basic.html"><strong aria-hidden="true">6.1.</strong> 计算机网络知识点总结</a></li><li class="chapter-item expanded "><a href="../network/net-cast.html"><strong aria-hidden="true">6.2.</strong> 单播、组播、广播、任播</a></li></ol></li><li class="chapter-item expanded "><a href="../SomethingFunny/index.html"><strong aria-hidden="true">7.</strong> SomethingFunny</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SomethingFunny/1970-1-1.html"><strong aria-hidden="true">7.1.</strong> 时间的起点</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KnowledgeBank</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="vim中如何快速进行光标移动"><a class="header" href="#vim中如何快速进行光标移动">Vim中如何快速进行光标移动</a></h1>
+<p>This page updated at: <strong>2019/01/02</strong></p>
+<p><img src="./../images/linux/vim-key.png" alt="vim-key" /></p>
+<p>vim提供的移动方式多如牛毛，但我们并不需要掌握全部这些命令，只需要掌握最适合自己的那些命令。因为我们最终的目的，并不是成为一个vim高手，而是更高效的编辑文本。</p>
+<p>我们下面介绍的命令，如果没有特别说明，都是在Normal模式下使用的命令。</p>
+<p>这些命令的帮助入口，就是&quot;:help 命令名&quot;。例如，对于&quot;j&quot;命令，查看它的帮助，使用&quot;:help j&quot;。</p>
+<h2 id="上下左右"><a class="header" href="#上下左右">[上下左右]</a></h2>
+<p>让我们从最简单的、也是使用频率最高的h, j, k, l开始。</p>
+<p>h, j, k, l的移动方式，已经成为vim的标志之一，并且也为更多的软件所接受。如果你仍在用上下左右光标来移动的话，说明你内心并没有真正接受vim的哲学，如果真的打算把vim做为你的编辑工具，就从使用h, j, k, l开始吧！</p>
+<p>h, j, k, l分别代表向左、下、上、右移动。如同许多vim命令一样，可以在这些键前加一个数字，表示移动的倍数。例如，&quot;10j&quot;表示向下移动10行；&quot;10l&quot;表示向右移动10列。</p>
+<p>缺省情况下，h和l命令不会把光标移出当前行。如果已经到了行首，无论按多少次h键，光标始终停留在行首，l命令也类似。如果希望h和l命令可以移出当前行，更改'whichwrap'选项的设置(:help 'whichwrap')。</p>
+<p>vim的作者在安排按键功能时别具匠心，在其它的键绑定中，也能看到h, j, k, l所代表的含义。</p>
+<p>例如，使光标在多个窗口间上下左右移动的命令，就是CTRL-W h/j/k/l (:help CTRL-W_h, ...)；</p>
+<p>再如，上下左右移动窗口位置的命令，是CTRL-W H/J/K/L (:help CTRL-W_H, ...)。注意，这里的H, J, K, L是大写的。</p>
+<h2 id="-翻页-"><a class="header" href="#-翻页-">[ 翻页 ]</a></h2>
+<p>在vim中翻页，同样可以使用PageUp和PageDown，不过，像使用上下左右光标一样，你的手指会移出主键盘区。因此，我们通常使用CTRL-B和CTRL-F来进行翻页，它们的功能等同于PageUp和PageDown。CTRL-B和CTRL-F前也可以加上数字，来表示向上或向下翻多少页。</p>
+<p>vim中还可以向上或向下翻半页，翻指定的行数，参见scroll.txt帮助手册页。</p>
+<h2 id="-在文件中移动-"><a class="header" href="#-在文件中移动-">[ 在文件中移动 ]</a></h2>
+<p>vim提供了一些命令，可以方便的在文件中移动。</p>
+<p>命令&quot;gg&quot;移动到文件的第一行，而命令&quot;G&quot;则移动到文件的最后一行。</p>
+<p>命令&quot;G&quot;前可以加上数字，在这里，数字的含义并不是倍数，而是你打算跳转的行号。例如，你想跳转到文件的第1234行，只需输入&quot;1234G&quot;。</p>
+<p>你还可以按百分比来跳转，例如，你想跳到文件的正中间，输入&quot;50%&quot;；如果想跳到75%处，输入&quot;75%&quot;。注意，你必须先输入一个数字，然后输入&quot;%&quot;。如果直接输入&quot;%&quot;，那含义就完全不同了。&quot;:help N%&quot;阅读更多细节。</p>
+<p>在文件中移动，你可能会迷失自己的位置，这时使用&quot;CTRL-G&quot;命令，查看一下自己位置。这个命令会显示出光标的位置及其它信息。为了避免迷失，你可以打开行号显示；使用&quot;:set number&quot;命令后，会在每一行前显示出行号，可以更方便的定位的跳转（:help 'number'）。</p>
+<h2 id="-移动到指定字符-"><a class="header" href="#-移动到指定字符-">[ 移动到指定字符 ]</a></h2>
+<p>上面的命令都是行间移动(除h, l外)，也就是从当前行移动到另外一行。如果我们想在当前行内快速移动，可以使用f, t, F, T命令。</p>
+<p>&quot;f&quot;命令移动到光标右边的指定字符上，例如，&quot;fx&quot;，会把移动到光标右边的第一个'x'字符上。&quot;F&quot;命令则反方向查找，也就是移动到光标左边的指定字符上。</p>
+<p>&quot;t&quot;命令和&quot;f&quot;命令的区别在于，它移动到光标右边的指定字符之前。例如，&quot;tx&quot;会移动到光标右边第一个'x'字符的前面。&quot;T&quot;命令是&quot;t&quot;命令的反向版本，它移动到光标左边的指定字符之后。</p>
+<p>这四个命令只在当前行中移动光标，光标不会跨越回车换行符。</p>
+<p>可以在命令前面使用数字，表示倍数。例如，&quot;3fx&quot;表示移动到光标右边的第3个'x'字符上。</p>
+<p>&quot;;&quot;命令重复前一次输入的f, t, F, T命令，而&quot;,&quot;命令会反方向重复前一次输入的f, t, F, T命令。这两个命令前也可以使用数字来表示倍数。</p>
+<h2 id="-行首行尾-"><a class="header" href="#-行首行尾-">[ 行首/行尾 ]</a></h2>
+<p>在vim中，移动到行首的命令非常简单，就是&quot;0&quot;，这个是数字0，而不是大写字母O。移动到行尾的命令是&quot;$&quot;。</p>
+<p>另外还有一个命令&quot;^&quot;，用它可以移动到行首的第一个非空白字符。</p>
+<p>在正则表达式中我们会看到，&quot;^&quot;字符代表行首，而&quot;$&quot;字符代表行尾。可见，vi/vim的按键的安排，的确是别具匠心的。</p>
+<h2 id="-按单词移动-"><a class="header" href="#-按单词移动-">[ 按单词移动 ]</a></h2>
+<p>我们知道，英文文档的主体是单词，通常用空白字符(包括空格、制表符和回车换行符)来分隔单词。vim中提供了许多命令来按单词移动。</p>
+<p>要根据单词来移动，首先要把文本分隔为一个个独立的单词。vim在对单词进行分隔时，会把'iskeyword'选项中的字符做为单词的组成字符。也就是说，一个单词(word)由'iskeyword'选项中定义的字符构成，它前面、后面的字符不在'iskeyword'选项定义的字符中。例如，如果我们把'iskeyword'选项设置为&quot;a-z,A-Z,48-57,<em>&quot;，那么&quot;FooBar_123&quot;被做为一个单词，而&quot;FooBar-123&quot;被做为三个单词：&quot;FooBar&quot;, &quot;-&quot;和&quot;123&quot;。&quot;a-z,A-Z,48-57,</em>&quot;中的48-57表示ASCII码表中的数字0-9。</p>
+<p>vim中，移动光标到下一个单词的词首，使用命令&quot;w&quot;，移动光标到上一个单词的词首，使用命令&quot;b&quot;；移动光标到下一个单词的结尾，用命令&quot;e&quot;，移动光标到上一个单词的结尾，使用命令&quot;ge&quot;。</p>
+<p>上面这些命令都使用'iskeyword'选项中的字符来确定单词的分界，还有几个命令，只把空白字符当做&quot;单词&quot;的分界。当然，这里说的&quot;单词&quot;已经不是传统意义上的单词了，而是由非空白字符构成一串字串。命令&quot;W&quot;移动光标到下个字串的开始，命令&quot;B&quot;移动到上个字串的开始；命令&quot;E&quot;移动到下个字串的结尾，命令&quot;gE&quot;移动到上个字串的结尾。和上面的命令比较一下，发现什么规律没有？</p>
+<h2 id="-hml-"><a class="header" href="#-hml-">[ H/M/L ]</a></h2>
+<p>注意：这几个命令是大写的。</p>
+<p>使用H/M/L这三个键，可以让光标跳到当前窗口的顶部、中间、和底部，停留在第一个非空字符上。H命令和L命令前也可以加一个数字，但数字的含义不再是倍数，而是指距窗口顶部、底部的行数。例如，&quot;3H&quot;表示光标移动到距窗口顶部第3行的位置；&quot;5L&quot;表示光标移动到距窗口底部5行的位置。</p>
+<h2 id="-相对于光标滚屏-"><a class="header" href="#-相对于光标滚屏-">[ 相对于光标滚屏 ]</a></h2>
+<p>在阅读代码时，有时我们需要根据光标所在的位置滚屏，把光标所在行移动窗口的顶端、中间或底部，这时就可以用到&quot;zt&quot;、&quot;zz&quot;和&quot;zb&quot;。这种滚屏方式相对于翻页来讲，它的好处在于，你能够始终以当前光标位置做为参照，不会出现翻几次页后，发现自己迷失了方向。 ^_^</p>
+<h2 id="-查找-"><a class="header" href="#-查找-">[ 查找 ]</a></h2>
+<p>查找，也可以做为一种快速移动的方式。</p>
+<p>在vim中查找非常容易，直接在Normal模式下输入&quot;/&quot;，然后输入你想查询的字符串，回车，就跳转到第一个匹配的地方了。&quot;/&quot;是向下查找，而&quot;?&quot;进行反方向查找。命令&quot;n&quot;重复上一次的查找命令，而命令&quot;N&quot;也重复上一次的查找命令，只不过它按相反方向查找。</p>
+<p>vim保存了查找的历史记录，你可以在输入&quot;/&quot;或&quot;?&quot;后，用上、下光标键(或CTRL-P/CTRL-N)翻看历史记录，然后再次执行这个查找。</p>
+<p>另外你还可以使用&quot;q/&quot;和&quot;q?&quot;命令，在vim窗口最下面打开一个新的窗口，这个窗口会列出你的查找历史记录，你可以使用任何vim编辑命令对此窗口的内容进行编辑，然后再按回车，就会对光标所在的行的内容进行查找。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../linux/linux-inside.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../java/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../linux/linux-inside.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../java/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
