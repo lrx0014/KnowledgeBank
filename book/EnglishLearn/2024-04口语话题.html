@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2024-04口语话题 - KnowledgeBank</title>
+
+
+        <!-- Custom HTML head -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6994154364754088"
+             crossorigin="anonymous"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FTW7YEGPL"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-8FTW7YEGPL');
+        </script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../linux/index.html"><strong aria-hidden="true">2.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/linux-inside.html"><strong aria-hidden="true">2.1.</strong> Linux-Inside</a></li><li class="chapter-item expanded "><a href="../linux/vim.html"><strong aria-hidden="true">2.2.</strong> 使用VIM</a></li></ol></li><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">3.</strong> JAVA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/proxy.html"><strong aria-hidden="true">3.1.</strong> 代理模式</a></li></ol></li><li class="chapter-item expanded "><a href="../golang/index.html"><strong aria-hidden="true">4.</strong> GO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../golang/go-internals.html"><strong aria-hidden="true">4.1.</strong> 深入解析GO</a></li><li class="chapter-item expanded "><a href="../golang/goroutine.html"><strong aria-hidden="true">4.2.</strong> 协程的正确用法</a></li><li class="chapter-item expanded "><a href="../golang/goroutine-pool.html"><strong aria-hidden="true">4.3.</strong> 协程池</a></li><li class="chapter-item expanded "><a href="../golang/init-main.html"><strong aria-hidden="true">4.4.</strong> 调用顺序</a></li><li class="chapter-item expanded "><a href="../golang/cross-compile.html"><strong aria-hidden="true">4.5.</strong> 交叉编译</a></li><li class="chapter-item expanded "><a href="../golang/golang-test.html"><strong aria-hidden="true">4.6.</strong> Go测试框架</a></li><li class="chapter-item expanded "><a href="../golang/docker-sock.html"><strong aria-hidden="true">4.7.</strong> Docker.Sock</a></li><li class="chapter-item expanded "><a href="../golang/k8s-rbac.html"><strong aria-hidden="true">4.8.</strong> k8s-RBAC访问控制</a></li><li class="chapter-item expanded "><a href="../golang/debug-with-gdb.html"><strong aria-hidden="true">4.9.</strong> 使用GDB调试</a></li><li class="chapter-item expanded "><a href="../golang/golang-template.html"><strong aria-hidden="true">4.10.</strong> GO模板处理</a></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">5.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/merge-rebase.html"><strong aria-hidden="true">5.1.</strong> 合并与变基</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">6.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../network/basic.html"><strong aria-hidden="true">6.1.</strong> 计算机网络知识点总结</a></li><li class="chapter-item expanded "><a href="../network/net-cast.html"><strong aria-hidden="true">6.2.</strong> 单播、组播、广播、任播</a></li></ol></li><li class="chapter-item expanded "><a href="../SomethingFunny/index.html"><strong aria-hidden="true">7.</strong> SomethingFunny</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SomethingFunny/1970-1-1.html"><strong aria-hidden="true">7.1.</strong> 时间的起点</a></li></ol></li><li class="chapter-item expanded "><a href="../EnglishLearn/index.html"><strong aria-hidden="true">8.</strong> EnglishLearn</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../EnglishLearn/1.单观点议论文.html"><strong aria-hidden="true">8.1.</strong> 单观点议论文</a></li><li class="chapter-item expanded "><a href="../EnglishLearn/2.双观点议论文.html"><strong aria-hidden="true">8.2.</strong> 双观点议论文</a></li><li class="chapter-item expanded "><a href="../EnglishLearn/3.优缺点议论文.html"><strong aria-hidden="true">8.3.</strong> 优缺点议论文</a></li><li class="chapter-item expanded "><a href="../EnglishLearn/4.报告文.html"><strong aria-hidden="true">8.4.</strong> 报告文</a></li><li class="chapter-item expanded "><a href="../EnglishLearn/5.混合文.html"><strong aria-hidden="true">8.5.</strong> 混合文</a></li><li class="chapter-item expanded "><a href="../EnglishLearn/2024-04口语话题.html" class="active"><strong aria-hidden="true">8.6.</strong> 2024-04口语话题</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KnowledgeBank</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="2024-04-雅思口语话题"><a class="header" href="#2024-04-雅思口语话题">2024-04 雅思口语话题</a></h1>
+<h2 id="part-1"><a class="header" href="#part-1">Part 1</a></h2>
+<h3 id="cakes"><a class="header" href="#cakes">Cakes</a></h3>
+<p>Do you like to eat cakes or other sweet foods?</p>
+<p>Did you like to eat cakes as a child?</p>
+<p>Can you make cakes?</p>
+<p>Are there any traditional Chinese cakes?</p>
+<p>Do you like to have some deserts after meals?</p>
+<h3 id="crowded-place"><a class="header" href="#crowded-place">Crowded place</a></h3>
+<p>Is the city where you live crowded?</p>
+<p>Is there a crowded place near where you live?</p>
+<p>Do you like crowded places?</p>
+<p>Do most people like crowded places?</p>
+<p>When was the last time you were in a crowded place?</p>
+<h3 id="sunglasses"><a class="header" href="#sunglasses">Sunglasses</a></h3>
+<p>Do you ofter wear sunglasses?</p>
+<p>Do you spend a lot of money on sunglasses?</p>
+<p>Do you give sunglasses as gifts?</p>
+<p>Have you ever lost your sunglasses?</p>
+<h3 id="video-games"><a class="header" href="#video-games">Video games</a></h3>
+<p>Do you play video games?</p>
+<p>Would you watch others play video games?</p>
+<p>Do you think people spend too much time playing video games?</p>
+<p>Do you prefer playing video games alone or with others?</p>
+<h3 id="advertisement"><a class="header" href="#advertisement">Advertisement</a></h3>
+<p>Is there an advertisement that made an impression on you when you were a child?</p>
+<p>Do you see a lot of advertisement on trains or other transport?</p>
+<p>Do you like advertisements?</p>
+<p>What kind of advertising do you like?</p>
+<h3 id="collecting-things"><a class="header" href="#collecting-things">Collecting things</a></h3>
+<p>Why do some people like to collect things?</p>
+<p>What thing do they collect?</p>
+<p>Where do they collect things?</p>
+<p>How do they collect things?</p>
+<h3 id="color"><a class="header" href="#color">Color</a></h3>
+<p>What is your favorite color?</p>
+<p>What color car would you like to buy?</p>
+<p>Do you think color is important when you decide which clothes to buy?</p>
+<h3 id="feeling-bored"><a class="header" href="#feeling-bored">Feeling bored</a></h3>
+<p>Do you often feel bored?</p>
+<p>When would you feel bored?</p>
+<p>What do you do when you feel bored?</p>
+<p>Do you think childhood is boring or adulthood is boring?</p>
+<h3 id="losing-things"><a class="header" href="#losing-things">Losing things</a></h3>
+<p>Do you often lose things?</p>
+<p>What can we do to avoid losing things?</p>
+<p>Why do some people tend to lose things more often than others?</p>
+<p>What will you do if you find something lost by others?</p>
+<h3 id="memory"><a class="header" href="#memory">Memory</a></h3>
+<p>Are you good at memorising things?</p>
+<p>Have you ever forgotten something that was important?</p>
+<p>Why do some people have good memories while others just don't?</p>
+<p>Why do more people rely on cellphones to memorise things?</p>
+<h3 id="music"><a class="header" href="#music">Music</a></h3>
+<p>Do a lot of people like music?</p>
+<p>What kind of music do you listen to?</p>
+<p>Is it easy to learn music?</p>
+<p>Do you have music lessons at school?</p>
+<h3 id="social-media"><a class="header" href="#social-media">Social media</a></h3>
+<p>When did you start using social media?</p>
+<p>Do you think you spend too much time on social media?</p>
+<p>Do your friends use social media?</p>
+<p>What do people often do on social media?</p>
+<h3 id="home-and-accommodation"><a class="header" href="#home-and-accommodation">Home and Accommodation</a></h3>
+<p>What kind of house or apartment do you want to live in the future?</p>
+<p>Are the transport facilities to your home very good?</p>
+<p>Do you prefer living in a house or an apartment?</p>
+<p>Please describe the room you live in</p>
+<p>What part of your home do you like the most?</p>
+<p>How long have you lived there?</p>
+<h3 id="hometown"><a class="header" href="#hometown">Hometown</a></h3>
+<p>Where is your hometown?</p>
+<p>Is that a big city or a small place?</p>
+<p>Please describe your home town a little.</p>
+<p>How long have you been living there?</p>
+<p>Do you think you will continue living there for a long time?</p>
+<p>Do you like your hometown?</p>
+<h3 id="the-area-you-live-in"><a class="header" href="#the-area-you-live-in">The area you live in</a></h3>
+<p>Do you like the area that you live in?</p>
+<p>Where do you like to go in that area?</p>
+<p>Do you know any famous people in your area?</p>
+<p>What are some changes in the area recently?</p>
+<p>Do you know any of your neighbors?</p>
+<h3 id="work-or-studies"><a class="header" href="#work-or-studies">Work or studies</a></h3>
+<p>What subjects are you studying?</p>
+<p>Do you like your subject?</p>
+<p>Why did you choose to study that subject?</p>
+<p>Do you think that your subject is popular in your country?</p>
+<p>Do you have new plans for your studies in the next five years?</p>
+<p>What are the benefits of being your age?</p>
+<h3 id="chatting"><a class="header" href="#chatting">Chatting</a></h3>
+<p>Do you like chatting with friends?</p>
+<p>What do you usually chat about with friends?</p>
+<p>Do you prefer to chat with a group of people or with only one friend?</p>
+<p>Do you prefer to communicate face-to-face or via social media?</p>
+<p>Do you argue with friends?</p>
+<h3 id="clothing"><a class="header" href="#clothing">Clothing</a></h3>
+<p>What kind of clothes do you like to wear?</p>
+<p>Do you prefer to wear comfortable and casual clothes or smart clothes?</p>
+<p>Do you like wearing T-shirts?</p>
+<p>Do you spend a lot of time choosing clothes?</p>
+<h3 id="films"><a class="header" href="#films">Films</a></h3>
+<p>What films do you like?</p>
+<p>Did you often watch films when you were a child?</p>
+<p>Did you ever go to the cinema alone as a child?</p>
+<p>Do you often go to the cinema with your friends?</p>
+<p>Do you think going to the cinema is a good way to spend time with friends?</p>
+<h3 id="fishing"><a class="header" href="#fishing">Fishing</a></h3>
+<p>Is fishing popular in your country?</p>
+<p>Do you like eating fish?</p>
+<p>Have you ever been to a place where there are lots of fish around you?</p>
+<p>Have you seen any movies with lots of fish?</p>
+<h3 id="geography"><a class="header" href="#geography">Geography</a></h3>
+<p>How do you like geography?</p>
+<p>Do you think geography is useful?</p>
+<p>Have you ever learned geography?</p>
+<p>Do you want to be a geography teacher?</p>
+<h3 id="gifts"><a class="header" href="#gifts">Gifts</a></h3>
+<p>Have you ever sent handmade gifts to others?</p>
+<p>Have you ever received a great gift?</p>
+<p>What do you consider when choosing a gift?</p>
+<p>Do you think you are good at choosing gift?</p>
+<h3 id="helping-others"><a class="header" href="#helping-others">Helping others</a></h3>
+<p>Do you usually help people around you?</p>
+<p>How do you help people around you, such as neighbors, family and friends?</p>
+<p>Do your parents teach you how to help others?</p>
+<p>Did your parents help you a lot when you were young?</p>
+<p>What have you done to help the elderly?</p>
+<h3 id="map"><a class="header" href="#map">Map</a></h3>
+<p>Do you often use maps?</p>
+<p>Do you use paper maps?</p>
+<p>How often do you use maps on your phone?</p>
+<p>Do you have maps at home?</p>
+<h3 id="musical-instruments"><a class="header" href="#musical-instruments">Musical instruments</a></h3>
+<p>Have you ever learned to play a musical instrument?</p>
+<p>What musical instruments do you enjoy listening to the most?</p>
+<p>Do you think children should learn to play an instrument at school?</p>
+<p>Do you think music education is important to children?</p>
+<h3 id="noise"><a class="header" href="#noise">Noise</a></h3>
+<p>Do you like to stay in a place with a lot of noise?</p>
+<p>What kinds of noises are there in the area where you live?</p>
+<p>Do you want to move to a quieter place?</p>
+<p>Do you think there is too much noise in today's world?</p>
+<p>Is making noise one of people's right?</p>
+<h3 id="robots"><a class="header" href="#robots">Robots</a></h3>
+<p>Are robots important?</p>
+<p>Would robots affect people's lives?</p>
+<p>Have you ever watched a movie about robots?</p>
+<p>Should we let a robot drive for us for long journeys?</p>
+<p>What can robots do for you at home?</p>
+<h3 id="running"><a class="header" href="#running">Running</a></h3>
+<p>Do you go running a lot?</p>
+<p>Where do you usually go running?</p>
+<p>When was the last time you went running?</p>
+<p>What do you think of running as a sport?</p>
+<h3 id="tea-and-coffee"><a class="header" href="#tea-and-coffee">Tea and coffee</a></h3>
+<p>Do people like tea and coffee nowadays?</p>
+<p>Do you prefer to use tea or coffee to serve your guests?</p>
+<p>When was the last time you had a cup of coffee or tea?</p>
+<p>Do you usually buy your coffee in a coffee shop?</p>
+<h3 id="transport"><a class="header" href="#transport">Transport</a></h3>
+<p>How do you go to work/school?</p>
+<p>What's the most popular means of transportation in your hometown?</p>
+<p>How far is it from your home to work/school?</p>
+<p>Do you think people will drive more in the future?</p>
+<h3 id="travelling"><a class="header" href="#travelling">Travelling</a></h3>
+<p>Do you like travelling?</p>
+<p>How often do you go travelling?</p>
+<p>Where do you usually travel?</p>
+<p>How do you feel when you are travelling?</p>
+<h2 id="part-2--3"><a class="header" href="#part-2--3">Part 2 &amp; 3</a></h2>
+<h3 id="important-items-at-home"><a class="header" href="#important-items-at-home">Important items at home</a></h3>
+<p>Describe a useful object in your home that you cannot live without.</p>
+<p>What it is?</p>
+<p>How long you have had it?</p>
+<p>What you can do with it?</p>
+<p>How often you use it?</p>
+<p>And explain why you cannot live without it.</p>
+<p>What equipment do you find difficult to use?</p>
+<p>What can you do with a laptop?</p>
+<p>What are the benefits of using technology in the workplace?</p>
+<p>Why do some people in the workplace dislike technology?</p>
+<p>Why do people buy a lot of household appliances?</p>
+<p>What do people often do with electronic devices?</p>
+<h3 id="disliked-work"><a class="header" href="#disliked-work">Disliked work</a></h3>
+<p>Describe a job that you would not like to do in the future.</p>
+<p>What it is?</p>
+<p>How you know about the job?</p>
+<p>Whether the job is difficult or not?</p>
+<p>And explain why you would not like to do it?</p>
+<p>What kind of jobs do Chinese young people like to do?</p>
+<p>Do Chinese young people prefer to choose an interesting job or a job with a high salary?</p>
+<p>Do you think it is easier to get a job now than in the past?</p>
+<p>Is it important to be successful in a job?</p>
+<p>Do you think AI will take over many jobs?</p>
+<p>Can AI improve people's lives? If so, how?</p>
+<h3 id="unusual-holidays"><a class="header" href="#unusual-holidays">Unusual holidays</a></h3>
+<p>Describe an unusual holiday you had.</p>
+<p>When and where you went?</p>
+<p>Who you went with?</p>
+<p>What you did there?</p>
+<p>And explain why it was unusual.</p>
+<p>Do you think people in your country have long enough holidays?</p>
+<p>Which holidays are popular in your country?</p>
+<p>What are the differences between old and young people when spending their holidays?</p>
+<h3 id="long-term-goals"><a class="header" href="#long-term-goals">Long term goals</a></h3>
+<p>Describe a long-term goal you would like to achieve.</p>
+<p>How long you have had this goal?</p>
+<p>What the goal is?</p>
+<p>How you will achieve it?</p>
+<p>And explain why you set this goal?</p>
+<p>What goals should a society have?</p>
+<p>Do people need to have goals?</p>
+<p>What goals do people your age have?</p>
+<p>Is it necessary to give advice to children?</p>
+<h3 id="map-1"><a class="header" href="#map-1">Map</a></h3>
+<p>Describe a occasion when you used a map.</p>
+<p>When you used the map?</p>
+<p>Where you were?</p>
+<p>Why you used a map?</p>
+<p>And explain how you felt about the experience.</p>
+<p>What do people usually do when they get lost?</p>
+<p>What are the differences between paper and digital maps?</p>
+<p>What do you think of in-car GPS navigation systems?</p>
+<p>What do people often do with a map?</p>
+<p>Why do most people prefer to use a paper map?</p>
+<p>How does learning to read a map help you learn more about your country?</p>
+<h3 id="improved-public-facilities"><a class="header" href="#improved-public-facilities">Improved public facilities</a></h3>
+<p>Describe a public facilities that has been renovated and improved.</p>
+<p>What the facility is?</p>
+<p>When it was renovated and improved?</p>
+<p>What has been renovated and improved?</p>
+<p>And explain how you feel about it.</p>
+<p>What are the benefits of public facilities?</p>
+<p>Why are some public transport methods popular, such as the subway?</p>
+<p>Why are some public transport methods unpopular?</p>
+<p>What kind of transport do young people and old people prefer?</p>
+<p>What do you think are the differences between Chinese square dancing now and in the future?</p>
+<h3 id="things-of-interest"><a class="header" href="#things-of-interest">Things of interest</a></h3>
+<p>Describe something in your country that you are interested in.</p>
+<p>What it is?</p>
+<p>Why you are interested in it?</p>
+<p>What are you interested in?</p>
+<p>Why you are interested in it?</p>
+<p>How do you do?</p>
+<h3 id="awesome-teammates"><a class="header" href="#awesome-teammates">Awesome teammates</a></h3>
+<p>Describe a great team member you worked with.</p>
+<p>Who this person is?</p>
+<p>When you worked together?</p>
+<p>What team project you worked on?</p>
+<p>And explain why you think he/she was a great team member.</p>
+<p>What qualities should a leader have?</p>
+<p>What should people do without a good team leader?</p>
+<p>Why do some people dislike teamwork?</p>
+<p>Do you think young people are good team players?</p>
+<h3 id="fun-conversations-with-the-elderly"><a class="header" href="#fun-conversations-with-the-elderly">Fun conversations with the elderly</a></h3>
+<p>Describe an interesting conversation you had with a very old person.</p>
+<p>Who this person is?</p>
+<p>Where you had the conversation?</p>
+<p>What you talked about?</p>
+<p>And explain how you felt about the experience.</p>
+<p>How do people have a conversation with an elderly person?</p>
+<p>What do people should talked about?</p>
+<p>What do people should pay attention to when people have a conversation with an elderly person?</p>
+<h3 id="helping-others-1"><a class="header" href="#helping-others-1">Helping others</a></h3>
+<p>Describe a time when you helped someone.</p>
+<p>Who you helped?</p>
+<p>Why you helped him/her?</p>
+<p>How you helped him/her?</p>
+<p>And explain how you felt about the experience.</p>
+<p>Should people be very kind when they help others?</p>
+<p>Should children be taught to be kind to others?</p>
+<p>How do you compare kindness with other qualities?</p>
+<h3 id="the-guest-is-like-a-guest"><a class="header" href="#the-guest-is-like-a-guest">The guest is like a guest</a></h3>
+<p>Describe a person who is good at making people feel welcome in his/her home.</p>
+<p>Who this person is?</p>
+<p>How you knew him/her?</p>
+<p>How he/she makes you feel welcome?</p>
+<p>Do people in your country often invite others to their homes? Why?</p>
+<p>What kind of people do you think are more likely to invite others to their homes?</p>
+<p>Who are more likely to invite others to their homes, people in the countryside or people in the city?</p>
+<p>Are tourist attractions in the countryside more welcome than those in the cities?</p>
+<p>What facilities are there in the tourist attractions in your country?</p>
+<h3 id="during-busy-periods"><a class="header" href="#during-busy-periods">During busy periods</a></h3>
+<p>Describe a period you were busy.</p>
+<p>When it was?</p>
+<p>What you did during the period?</p>
+<p>What made you busy?</p>
+<p>And explain how you felt about the experience.</p>
+<p>Why do people often feel tired in this day and age?</p>
+<p>Do you think people will feel even more tired in the future?</p>
+<p>Is time management important?</p>
+<p>How does technology help with time management?</p>
+<p>Does technology distract people?</p>
+<h3 id="a-talkative-person"><a class="header" href="#a-talkative-person">A talkative person</a></h3>
+<p>Describe a person you know who likes to talk a lot.</p>
+<p>Who this person is?</p>
+<p>How you knew this person?</p>
+<p>What he/she usually talks about?</p>
+<p>And explain how you felt about him/her.</p>
+<p>How should parents encourage their children?</p>
+<p>How should people encourage children to express themselves when being asked questions that they are afraid to answer?</p>
+<h3 id="proficient-in-welcoming-guests"><a class="header" href="#proficient-in-welcoming-guests">Proficient in welcoming guests</a></h3>
+<p>Describe a person who you think is good at welcoming visitors.</p>
+<p>Who he/she is?</p>
+<p>When and how you met him/her?</p>
+<p>How he/she welcomes visitors?</p>
+<p>And explain why you think he/she is good at welcoming visitors.</p>
+<p>What do you think of using food to treat visitors?</p>
+<p>What do you say to welcome visitor?</p>
+<p>What do you do to welcome visitor?</p>
+<h3 id="i-want-to-go-to-a-place-to-relax"><a class="header" href="#i-want-to-go-to-a-place-to-relax">I want to go to a place to relax</a></h3>
+<p>Describe a place you would like to go to relax.</p>
+<p>Where it is?</p>
+<p>When you would like to go there?</p>
+<p>What you would do there?</p>
+<p>And explain why you would like to go to this place to relax.</p>
+<p>Do people have enough places to relax in your country?</p>
+<p>What do people usually do when they are relaxed?</p>
+<p>Is physical activity good for relaxation?</p>
+<p>Do you think that spending time in front of a screen helps people relax?</p>
+<p>Do people have to spend a lot of money to relax?</p>
+<h3 id="skills-learned-in-childhood"><a class="header" href="#skills-learned-in-childhood">Skills learned in childhood</a></h3>
+<p>Describe a skill that you learned in your childhood.</p>
+<p>What the skill is?</p>
+<p>When and how you learned it?</p>
+<p>Who you learned it from?</p>
+<p>And explain why you learned it.</p>
+<p>Where do children learn skills in your country?</p>
+<p>What are the differences between learning skills on your own and from others?</p>
+<h3 id="primary-school-activities"><a class="header" href="#primary-school-activities">Primary school activities</a></h3>
+<p>Describe an activity that you remember enjoying most in your primary school.</p>
+<p>What the activity was?</p>
+<p>How often you did the activity?</p>
+<p>Who you did it with?</p>
+<p>And explain why you enjoyed doing it.</p>
+<p>What activities do children often do in your country?</p>
+<p>What do parents in your country let their children do?</p>
+<p>What are the differences between activities at home and at school?</p>
+<p>Why do some people like to participate in activities?</p>
+<p>What activities do people do in their free time?</p>
+<h3 id="things-that-help-with-learning-and-work"><a class="header" href="#things-that-help-with-learning-and-work">Things that help with learning and work</a></h3>
+<p>Describe something you do regularly to help you work or study.</p>
+<p>What it is?</p>
+<p>How you do it?</p>
+<p>When you do iy?</p>
+<p>And explain how you feel about the method.</p>
+<p>Do you think everyone's routine is different?</p>
+<p>What do you do regularly to help you work or study?</p>
+<p>Why do you do that?</p>
+<h3 id="noise-1"><a class="header" href="#noise-1">Noise</a></h3>
+<p>Describe an occasion when there was a lot of noise.</p>
+<p>Where you heard the noise?</p>
+<p>Who made the noise?</p>
+<p>How you reacted to the noise?</p>
+<p>And explain how you felt about the noise.</p>
+<p>What kinds of places should be noise-free?</p>
+<p>Can people bring children to these noise-free places?</p>
+<p>Why can't people make noise in a church?</p>
+<p>What public morals should people follow in your country?</p>
+<h3 id="uniforms"><a class="header" href="#uniforms">Uniforms</a></h3>
+<p>Describe a uniform you wear (e.g. at school, at work)</p>
+<p>Where you wear the uniform?</p>
+<p>How long you need to wear it?</p>
+<p>What it looks like?</p>
+<p>Who bought it for you?</p>
+<p>And explain how you feel about it.</p>
+<p>Why should students wear uniforms?</p>
+<p>Why should people at work wear uniforms?</p>
+<p>What are the advantages and disadvantages of wearing a uniform?;</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../EnglishLearn/5.混合文.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../EnglishLearn/5.混合文.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
