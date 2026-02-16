@@ -75,6 +75,8 @@ letsencrypt                  True    2d2h
 
 ![argo](../images/simpl/common01/argo-helthy.png)
 
+![idea](../images/simpl/common01/idea.png)
+
 the manifest for the success case:
 ```yaml
 apiVersion: argoproj.io/v1alpha1
